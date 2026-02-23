@@ -153,7 +153,8 @@
     "feature-flags:sync:check": "tsx test/e2e/feature-flags/sync-production-flags.ts --check",
     "feature-flags:sync:update": "tsx test/e2e/feature-flags/sync-production-flags.ts --update",
     "yarn-binary:download": "corepack pack -o .yarn/yarn-corepack.tgz",
-    "yarn-binary:hydrate": "corepack hydrate .yarn/yarn-corepack.tgz --activate"
+    "yarn-binary:hydrate": "corepack hydrate .yarn/yarn-corepack.tgz --activate",
+    "docs:messenger": "messenger-docs --serve"
   },
   "resolutions": {
     "@unrs/resolver-binding-wasm32-wasi": "npm:npm-empty-package@1.0.0",
@@ -528,6 +529,7 @@
     "@metamask/eth-json-rpc-provider": "^6.0.0",
     "@metamask/forwarder": "^1.1.0",
     "@metamask/foundryup": "^1.0.1",
+    "@metamask/messenger-docs": "npm:@metamask-previews/messenger-docs@0.0.0-preview-658f090af",
     "@metamask/phishing-warning": "^5.1.0",
     "@metamask/preferences-controller": "^23.0.0",
     "@metamask/snap-account-abstraction-keyring-site": "^1.0.0",
@@ -818,10 +820,16 @@
       "ws>utf-8-validate": false,
       "@google/genai>protobufjs": false,
       "eth-lattice-keyring>gridplus-sdk>secp256k1": false,
-      "eslint-import-resolver-typescript>unrs-resolver": false
+      "eslint-import-resolver-typescript>unrs-resolver": false,
+      "@metamask/messenger-docs>@docusaurus/core>core-js": false
     }
   },
   "packageManager": "yarn@4.12.0",
+  "messenger-docs": {
+    "scanDirs": [
+      "app"
+    ]
+  },
   "foundryup": {
     "binaries": [
       "anvil"
