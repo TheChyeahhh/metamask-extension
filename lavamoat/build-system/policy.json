@@ -120,17 +120,12 @@
         "@babel/core>@babel/types": true
       }
     },
-    "@babel/preset-env>@babel/plugin-transform-exponentiation-operator>@babel/helper-builder-binary-assignment-operator-visitor": {
-      "packages": {
-        "@babel/core>@babel/types": true
-      }
-    },
     "@babel/core>@babel/helper-compilation-targets": {
       "globals": {
         "console.warn": true,
         "process.env.BROWSERSLIST": true,
         "process.env.BROWSERSLIST_CONFIG": true,
-        "process.versions.node": true
+        "process.versions.node.split": true
       },
       "packages": {
         "@babel/preset-env>@babel/compat-data": true,
@@ -203,7 +198,6 @@
       "packages": {
         "@babel/core": true,
         "@babel/core>@babel/helper-module-transforms>@babel/helper-module-imports": true,
-        "@babel/core>@babel/helper-module-transforms>@babel/helper-simple-access": true,
         "@babel/code-frame>@babel/helper-validator-identifier": true,
         "depcheck>@babel/traverse": true
       }
@@ -227,11 +221,6 @@
         "@babel/plugin-transform-private-methods>@babel/helper-create-class-features-plugin>@babel/helper-member-expression-to-functions": true,
         "@babel/plugin-transform-private-methods>@babel/helper-create-class-features-plugin>@babel/helper-optimise-call-expression": true,
         "depcheck>@babel/traverse": true
-      }
-    },
-    "@babel/core>@babel/helper-module-transforms>@babel/helper-simple-access": {
-      "packages": {
-        "@babel/core>@babel/types": true
       }
     },
     "@babel/preset-env>@babel/plugin-transform-for-of>@babel/helper-skip-transparent-expression-wrappers": {
@@ -360,10 +349,10 @@
         "@babel/core": true,
         "@babel/plugin-transform-private-property-in-object>@babel/helper-annotate-as-pure": true,
         "@babel/core>@babel/helper-compilation-targets": true,
+        "depcheck>@babel/traverse>@babel/helper-globals": true,
         "@babel/preset-env>@babel/helper-plugin-utils": true,
         "@babel/preset-env>@babel/plugin-transform-classes>@babel/helper-replace-supers": true,
-        "depcheck>@babel/traverse": true,
-        "@babel/preset-env>@babel/plugin-transform-classes>globals": true
+        "depcheck>@babel/traverse": true
       }
     },
     "@babel/preset-env>@babel/plugin-transform-computed-properties": {
@@ -376,7 +365,8 @@
     "@babel/preset-env>@babel/plugin-transform-destructuring": {
       "packages": {
         "@babel/core": true,
-        "@babel/preset-env>@babel/helper-plugin-utils": true
+        "@babel/preset-env>@babel/helper-plugin-utils": true,
+        "depcheck>@babel/traverse": true
       }
     },
     "@babel/preset-env>@babel/plugin-transform-dotall-regex": {
@@ -402,10 +392,15 @@
         "@babel/preset-env>@babel/helper-plugin-utils": true
       }
     },
-    "@babel/preset-env>@babel/plugin-transform-exponentiation-operator": {
+    "@babel/preset-env>@babel/plugin-transform-explicit-resource-management": {
       "packages": {
         "@babel/core": true,
-        "@babel/preset-env>@babel/plugin-transform-exponentiation-operator>@babel/helper-builder-binary-assignment-operator-visitor": true,
+        "@babel/preset-env>@babel/helper-plugin-utils": true,
+        "@babel/preset-env>@babel/plugin-transform-destructuring": true
+      }
+    },
+    "@babel/preset-env>@babel/plugin-transform-exponentiation-operator": {
+      "packages": {
         "@babel/preset-env>@babel/helper-plugin-utils": true
       }
     },
@@ -463,8 +458,7 @@
       "packages": {
         "@babel/core": true,
         "@babel/core>@babel/helper-module-transforms": true,
-        "@babel/preset-env>@babel/helper-plugin-utils": true,
-        "@babel/core>@babel/helper-module-transforms>@babel/helper-simple-access": true
+        "@babel/preset-env>@babel/helper-plugin-utils": true
       }
     },
     "@babel/preset-env>@babel/plugin-transform-modules-systemjs": {
@@ -518,7 +512,9 @@
         "@babel/core": true,
         "@babel/core>@babel/helper-compilation-targets": true,
         "@babel/preset-env>@babel/helper-plugin-utils": true,
-        "@babel/preset-env>@babel/plugin-transform-parameters": true
+        "@babel/preset-env>@babel/plugin-transform-destructuring": true,
+        "@babel/preset-env>@babel/plugin-transform-parameters": true,
+        "depcheck>@babel/traverse": true
       }
     },
     "@babel/preset-env>@babel/plugin-transform-object-super": {
@@ -598,9 +594,19 @@
       }
     },
     "@babel/preset-env>@babel/plugin-transform-regenerator": {
+      "builtin": {
+        "assert.ok": true,
+        "assert.strictEqual": true
+      },
       "packages": {
-        "@babel/preset-env>@babel/helper-plugin-utils": true,
-        "@babel/preset-env>@babel/plugin-transform-regenerator>regenerator-transform": true
+        "@babel/core": true,
+        "@babel/preset-env>@babel/helper-plugin-utils": true
+      }
+    },
+    "@babel/preset-env>@babel/plugin-transform-regexp-modifiers": {
+      "packages": {
+        "@babel/preset-env>@babel/plugin-transform-dotall-regex>@babel/helper-create-regexp-features-plugin": true,
+        "@babel/preset-env>@babel/helper-plugin-utils": true
       }
     },
     "@babel/preset-env>@babel/plugin-transform-reserved-words": {
@@ -714,6 +720,7 @@
         "@babel/preset-env>@babel/plugin-transform-duplicate-keys": true,
         "@babel/preset-env>@babel/plugin-transform-duplicate-named-capturing-groups-regex": true,
         "@babel/preset-env>@babel/plugin-transform-dynamic-import": true,
+        "@babel/preset-env>@babel/plugin-transform-explicit-resource-management": true,
         "@babel/preset-env>@babel/plugin-transform-exponentiation-operator": true,
         "@babel/preset-env>@babel/plugin-transform-export-namespace-from": true,
         "@babel/preset-env>@babel/plugin-transform-for-of": true,
@@ -739,6 +746,7 @@
         "@babel/plugin-transform-private-property-in-object": true,
         "@babel/preset-env>@babel/plugin-transform-property-literals": true,
         "@babel/preset-env>@babel/plugin-transform-regenerator": true,
+        "@babel/preset-env>@babel/plugin-transform-regexp-modifiers": true,
         "@babel/preset-env>@babel/plugin-transform-reserved-words": true,
         "@babel/preset-env>@babel/plugin-transform-shorthand-properties": true,
         "@babel/preset-env>@babel/plugin-transform-spread": true,
@@ -1261,12 +1269,12 @@
     },
     "browserify>syntax-error>acorn-node": {
       "packages": {
-        "@storybook/react>acorn-walk": true,
+        "browserify>syntax-error>acorn-node>acorn-walk": true,
         "browserify>syntax-error>acorn-node>acorn": true,
         "watchify>xtend": true
       }
     },
-    "@storybook/react>acorn-walk": {
+    "browserify>syntax-error>acorn-node>acorn-walk": {
       "globals": {
         "define": true
       }
@@ -1480,7 +1488,6 @@
         "browserslist": true,
         "autoprefixer>caniuse-lite": true,
         "autoprefixer>fraction.js": true,
-        "autoprefixer>normalize-range": true,
         "postcss>picocolors": true,
         "postcss": true,
         "stylelint>postcss-value-parser": true
@@ -1642,7 +1649,7 @@
       "packages": {
         "gulp>undertaker>arr-flatten": true,
         "gulp>gulp-cli>matchdep>micromatch>array-unique": true,
-        "gulp>glob-watcher>anymatch>micromatch>braces>extend-shallow": true,
+        "gulp>gulp-cli>matchdep>micromatch>braces>extend-shallow": true,
         "gulp>glob-watcher>anymatch>micromatch>braces>fill-range": true,
         "gulp>gulp-cli>isobject": true,
         "gulp-watch>anymatch>micromatch>braces>repeat-element": true,
@@ -2995,7 +3002,7 @@
       "packages": {
         "gulp>glob-watcher>anymatch>micromatch>extglob>expand-brackets>debug": true,
         "gulp>glob-watcher>anymatch>micromatch>extglob>expand-brackets>define-property": true,
-        "gulp>glob-watcher>anymatch>micromatch>extglob>expand-brackets>extend-shallow": true,
+        "gulp>gulp-cli>matchdep>micromatch>braces>extend-shallow": true,
         "gulp>gulp-cli>matchdep>micromatch>extglob>expand-brackets>posix-character-classes": true,
         "gulp>gulp-cli>matchdep>micromatch>regex-not": true,
         "gulp>gulp-cli>matchdep>micromatch>snapdragon": true,
@@ -3017,24 +3024,21 @@
         "__global__": true
       }
     },
-    "gulp>glob-watcher>anymatch>micromatch>braces>extend-shallow": {
+    "gulp>gulp-cli>matchdep>micromatch>braces>extend-shallow": {
       "packages": {
         "gulp-watch>anymatch>micromatch>object.omit>is-extendable": true
       }
     },
-    "gulp>glob-watcher>anymatch>micromatch>extglob>expand-brackets>extend-shallow": {
+    "gulp>glob-watcher>anymatch>micromatch>extend-shallow": {
       "packages": {
-        "gulp-watch>anymatch>micromatch>object.omit>is-extendable": true
+        "gulp-zip>plugin-error>extend-shallow>assign-symbols": true,
+        "gulp>glob-watcher>anymatch>micromatch>extend-shallow>is-extendable": true
       }
     },
-    "gulp>glob-watcher>anymatch>micromatch>extglob>extend-shallow": {
+    "gulp>gulp-cli>matchdep>micromatch>nanomatch>extend-shallow": {
       "packages": {
-        "gulp-watch>anymatch>micromatch>object.omit>is-extendable": true
-      }
-    },
-    "gulp>glob-watcher>anymatch>micromatch>braces>fill-range>extend-shallow": {
-      "packages": {
-        "gulp-watch>anymatch>micromatch>object.omit>is-extendable": true
+        "gulp-zip>plugin-error>extend-shallow>assign-symbols": true,
+        "gulp>gulp-cli>matchdep>micromatch>nanomatch>extend-shallow>is-extendable": true
       }
     },
     "gulp-zip>plugin-error>extend-shallow": {
@@ -3043,14 +3047,22 @@
         "gulp-zip>plugin-error>extend-shallow>is-extendable": true
       }
     },
-    "gulp>gulp-cli>matchdep>micromatch>snapdragon>base>cache-base>set-value>extend-shallow": {
+    "gulp>gulp-cli>matchdep>micromatch>regex-not>extend-shallow": {
       "packages": {
-        "gulp-watch>anymatch>micromatch>object.omit>is-extendable": true
+        "gulp-zip>plugin-error>extend-shallow>assign-symbols": true,
+        "gulp>gulp-cli>matchdep>micromatch>regex-not>extend-shallow>is-extendable": true
       }
     },
-    "gulp>gulp-cli>matchdep>micromatch>snapdragon>extend-shallow": {
+    "gulp>gulp-cli>matchdep>micromatch>braces>split-string>extend-shallow": {
       "packages": {
-        "gulp-watch>anymatch>micromatch>object.omit>is-extendable": true
+        "gulp-zip>plugin-error>extend-shallow>assign-symbols": true,
+        "gulp>gulp-cli>matchdep>micromatch>braces>split-string>extend-shallow>is-extendable": true
+      }
+    },
+    "gulp>gulp-cli>matchdep>micromatch>to-regex>extend-shallow": {
+      "packages": {
+        "gulp-zip>plugin-error>extend-shallow>assign-symbols": true,
+        "gulp>gulp-cli>matchdep>micromatch>to-regex>extend-shallow>is-extendable": true
       }
     },
     "gulp>glob-watcher>anymatch>micromatch>extglob": {
@@ -3058,7 +3070,7 @@
         "gulp>gulp-cli>matchdep>micromatch>array-unique": true,
         "gulp>glob-watcher>anymatch>micromatch>extglob>define-property": true,
         "gulp>glob-watcher>anymatch>micromatch>extglob>expand-brackets": true,
-        "gulp>glob-watcher>anymatch>micromatch>extglob>extend-shallow": true,
+        "gulp>gulp-cli>matchdep>micromatch>braces>extend-shallow": true,
         "gulp>gulp-cli>matchdep>micromatch>fragment-cache": true,
         "gulp>gulp-cli>matchdep>micromatch>regex-not": true,
         "gulp>gulp-cli>matchdep>micromatch>snapdragon": true,
@@ -3188,7 +3200,7 @@
         "util.inspect": true
       },
       "packages": {
-        "gulp>glob-watcher>anymatch>micromatch>braces>fill-range>extend-shallow": true,
+        "gulp>gulp-cli>matchdep>micromatch>braces>extend-shallow": true,
         "gulp>glob-watcher>anymatch>micromatch>braces>fill-range>is-number": true,
         "stylelint>@stylelint/postcss-markdown>remark>remark-parse>repeat-string": true,
         "gulp>glob-watcher>anymatch>micromatch>braces>fill-range>to-regex-range": true
@@ -4012,7 +4024,32 @@
         "gulp-watch>anymatch>micromatch>regex-cache>is-equal-shallow>is-primitive": true
       }
     },
+    "gulp>glob-watcher>anymatch>micromatch>extend-shallow>is-extendable": {
+      "packages": {
+        "@babel/register>clone-deep>is-plain-object": true
+      }
+    },
+    "gulp>gulp-cli>matchdep>micromatch>nanomatch>extend-shallow>is-extendable": {
+      "packages": {
+        "@babel/register>clone-deep>is-plain-object": true
+      }
+    },
     "gulp-zip>plugin-error>extend-shallow>is-extendable": {
+      "packages": {
+        "@babel/register>clone-deep>is-plain-object": true
+      }
+    },
+    "gulp>gulp-cli>matchdep>micromatch>regex-not>extend-shallow>is-extendable": {
+      "packages": {
+        "@babel/register>clone-deep>is-plain-object": true
+      }
+    },
+    "gulp>gulp-cli>matchdep>micromatch>braces>split-string>extend-shallow>is-extendable": {
+      "packages": {
+        "@babel/register>clone-deep>is-plain-object": true
+      }
+    },
+    "gulp>gulp-cli>matchdep>micromatch>to-regex>extend-shallow>is-extendable": {
       "packages": {
         "@babel/register>clone-deep>is-plain-object": true
       }
@@ -4548,7 +4585,7 @@
         "gulp>gulp-cli>matchdep>micromatch>array-unique": true,
         "gulp>glob-watcher>anymatch>micromatch>braces": true,
         "gulp>glob-watcher>anymatch>micromatch>define-property": true,
-        "gulp-zip>plugin-error>extend-shallow": true,
+        "gulp>glob-watcher>anymatch>micromatch>extend-shallow": true,
         "gulp>glob-watcher>anymatch>micromatch>extglob": true,
         "gulp>gulp-cli>matchdep>micromatch>fragment-cache": true,
         "@babel/register>clone-deep>kind-of": true,
@@ -4658,7 +4695,7 @@
         "gulp-zip>plugin-error>arr-diff": true,
         "gulp>gulp-cli>matchdep>micromatch>array-unique": true,
         "gulp>gulp-cli>matchdep>micromatch>nanomatch>define-property": true,
-        "gulp-zip>plugin-error>extend-shallow": true,
+        "gulp>gulp-cli>matchdep>micromatch>nanomatch>extend-shallow": true,
         "gulp>gulp-cli>matchdep>micromatch>fragment-cache": true,
         "nyc>spawn-wrap>is-windows": true,
         "@babel/register>clone-deep>kind-of": true,
@@ -5111,7 +5148,7 @@
     "tailwindcss>postcss-nested": {
       "packages": {
         "postcss": true,
-        "stylelint>postcss-selector-parser": true
+        "tailwindcss>postcss-nested>postcss-selector-parser": true
       }
     },
     "postcss-rtlcss": {
@@ -5123,7 +5160,13 @@
         "postcss-rtlcss>rtlcss": true
       }
     },
-    "stylelint>postcss-selector-parser": {
+    "tailwindcss>postcss-nested>postcss-selector-parser": {
+      "packages": {
+        "stylelint>postcss-selector-parser>cssesc": true,
+        "@storybook/react>util-deprecate": true
+      }
+    },
+    "tailwindcss>postcss-selector-parser": {
       "packages": {
         "stylelint>postcss-selector-parser>cssesc": true,
         "@storybook/react>util-deprecate": true
@@ -6093,15 +6136,6 @@
         "define": true
       }
     },
-    "@babel/preset-env>@babel/plugin-transform-regenerator>regenerator-transform": {
-      "builtin": {
-        "assert": true,
-        "util.inherits": true
-      },
-      "packages": {
-        "@babel/runtime": true
-      }
-    },
     "gulp-watch>anymatch>micromatch>regex-cache": {
       "packages": {
         "gulp-watch>anymatch>micromatch>regex-cache>is-equal-shallow": true
@@ -6109,7 +6143,7 @@
     },
     "gulp>gulp-cli>matchdep>micromatch>regex-not": {
       "packages": {
-        "gulp-zip>plugin-error>extend-shallow": true,
+        "gulp>gulp-cli>matchdep>micromatch>regex-not>extend-shallow": true,
         "gulp>gulp-cli>matchdep>micromatch>to-regex>safe-regex": true
       }
     },
@@ -6674,7 +6708,7 @@
     },
     "gulp>gulp-cli>matchdep>micromatch>snapdragon>base>cache-base>set-value": {
       "packages": {
-        "gulp>gulp-cli>matchdep>micromatch>snapdragon>base>cache-base>set-value>extend-shallow": true,
+        "gulp>gulp-cli>matchdep>micromatch>braces>extend-shallow": true,
         "gulp-watch>anymatch>micromatch>object.omit>is-extendable": true,
         "@babel/register>clone-deep>is-plain-object": true,
         "gulp>gulp-cli>matchdep>micromatch>braces>split-string": true
@@ -6756,7 +6790,7 @@
         "gulp>gulp-cli>matchdep>micromatch>snapdragon>base": true,
         "gulp>gulp-cli>matchdep>micromatch>snapdragon>debug": true,
         "gulp>gulp-cli>matchdep>micromatch>snapdragon>define-property": true,
-        "gulp>gulp-cli>matchdep>micromatch>snapdragon>extend-shallow": true,
+        "gulp>gulp-cli>matchdep>micromatch>braces>extend-shallow": true,
         "gulp>gulp-cli>liftoff>fined>parse-filepath>map-cache": true,
         "resolve-url-loader>rework>css>source-map-resolve": true,
         "gulp>gulp-cli>matchdep>micromatch>snapdragon>source-map": true,
@@ -6826,7 +6860,7 @@
     },
     "gulp>gulp-cli>matchdep>micromatch>braces>split-string": {
       "packages": {
-        "gulp-zip>plugin-error>extend-shallow": true
+        "gulp>gulp-cli>matchdep>micromatch>braces>split-string>extend-shallow": true
       }
     },
     "gulp-livereload>event-stream>split": {
@@ -7216,7 +7250,7 @@
         "postcss": true,
         "tailwindcss>postcss-js": true,
         "tailwindcss>postcss-nested": true,
-        "stylelint>postcss-selector-parser": true,
+        "tailwindcss>postcss-selector-parser": true,
         "tailwindcss>sucrase": true
       }
     },
@@ -7558,7 +7592,7 @@
     "gulp>gulp-cli>matchdep>micromatch>to-regex": {
       "packages": {
         "gulp>gulp-cli>matchdep>micromatch>to-regex>define-property": true,
-        "gulp-zip>plugin-error>extend-shallow": true,
+        "gulp>gulp-cli>matchdep>micromatch>to-regex>extend-shallow": true,
         "gulp>gulp-cli>matchdep>micromatch>regex-not": true,
         "gulp>gulp-cli>matchdep>micromatch>to-regex>safe-regex": true
       }
