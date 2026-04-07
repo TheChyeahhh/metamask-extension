@@ -8696,22 +8696,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@metamask/messenger-docs@npm:@metamask-previews/messenger-docs@0.0.0-preview-658f090af":
-  version: 0.0.0-preview-658f090af
-  resolution: "@metamask-previews/messenger-docs@npm:0.0.0-preview-658f090af"
+"@metamask/messenger-cli@npm:@metamask-previews/messenger-cli@0.1.0-preview-b6a517f5e":
+  version: 0.1.0-preview-b6a517f5e
+  resolution: "@metamask-previews/messenger-cli@npm:0.1.0-preview-b6a517f5e"
   dependencies:
     "@docusaurus/core": "npm:^3.9.0"
     "@docusaurus/preset-classic": "npm:^3.9.0"
     "@docusaurus/theme-common": "npm:^3.9.0"
     "@easyops-cn/docusaurus-search-local": "npm:^0.55.0"
     "@mdx-js/react": "npm:^3.0.0"
+    "@metamask/utils": "npm:^11.9.0"
+    execa: "npm:^5.0.0"
     prism-react-renderer: "npm:^2.4.1"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
-    typescript: "npm:~5.3.3"
+    yargs: "npm:^17.7.2"
+  peerDependencies:
+    eslint: ">=8"
+    typescript: ">=5.0.0"
+  peerDependenciesMeta:
+    eslint:
+      optional: true
   bin:
-    messenger-docs: ./dist/cli.mjs
-  checksum: 10/0e27ee57d987a767e678831bef6bb8b95a1698c464c57bd60487a98bbcb0c525397c3bd443e0febd8136d5b13d6544e1d0b33f99a6eabb2202770806306d6d1b
+    messenger-action-types: ./dist/cli.mjs
+    messenger-docs: ./dist/docs/cli.mjs
+  checksum: 10/6465f728e349ca1347d5ed464ef67325b80e869eb8c9f7c646d9e7cc24ca3a537f3f2b9050e8455f288f1b8ab0b0caa7b24c82de082d4f5b45e75cd296c4cdc0
   languageName: node
   linkType: hard
 
@@ -37567,7 +37576,7 @@ __metadata:
     "@metamask/message-manager": "npm:^14.0.0"
     "@metamask/message-signing-snap": "npm:1.1.4"
     "@metamask/messenger": "npm:^1.0.0"
-    "@metamask/messenger-docs": "npm:@metamask-previews/messenger-docs@0.0.0-preview-658f090af"
+    "@metamask/messenger-cli": "npm:@metamask-previews/messenger-cli@0.1.0-preview-b6a517f5e"
     "@metamask/metamask-eth-abis": "npm:^3.1.1"
     "@metamask/multichain-account-service": "npm:^8.0.1"
     "@metamask/multichain-api-client": "npm:^0.10.1"
@@ -49647,16 +49656,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:~5.3.3":
-  version: 5.3.3
-  resolution: "typescript@npm:5.3.3"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 10/6e4e6a14a50c222b3d14d4ea2f729e79f972fa536ac1522b91202a9a65af3605c2928c4a790a4a50aa13694d461c479ba92cedaeb1e7b190aadaa4e4b96b8e18
-  languageName: node
-  linkType: hard
-
 "typescript@npm:~5.6.0":
   version: 5.6.3
   resolution: "typescript@npm:5.6.3"
@@ -49674,16 +49673,6 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 10/dc58d777eb4c01973f7fbf1fd808aad49a0efdf545528dab9b07d94fdcb65b8751742804c3057e9619a4627f2d9cc85547fdd49d9f4326992ad0181b49e61d81
-  languageName: node
-  linkType: hard
-
-"typescript@patch:typescript@npm%3A~5.3.3#optional!builtin<compat/typescript>":
-  version: 5.3.3
-  resolution: "typescript@patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 10/c93786fcc9a70718ba1e3819bab56064ead5817004d1b8186f8ca66165f3a2d0100fee91fa64c840dcd45f994ca5d615d8e1f566d39a7470fc1e014dbb4cf15d
   languageName: node
   linkType: hard
 
