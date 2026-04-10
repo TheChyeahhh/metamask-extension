@@ -2984,6 +2984,44 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@exodus/bitcoin-wallet-standard-chains@npm:^0.0.0":
+  version: 0.0.0
+  resolution: "@exodus/bitcoin-wallet-standard-chains@npm:0.0.0"
+  dependencies:
+    "@wallet-standard/base": "npm:^1.0.1"
+  checksum: 10/1193d95599431af7e772eaa1967502871063b1025bfe43443b7c37c0de9fbd6225cf7977a68eef1a43302ede05f0f3a634f01c5e060b53b1e240e8e250a2f156
+  languageName: node
+  linkType: hard
+
+"@exodus/bitcoin-wallet-standard-core@npm:^0.0.0":
+  version: 0.0.0
+  resolution: "@exodus/bitcoin-wallet-standard-core@npm:0.0.0"
+  dependencies:
+    "@exodus/bitcoin-wallet-standard-chains": "npm:^0.0.0"
+    "@exodus/bitcoin-wallet-standard-features": "npm:^0.0.0"
+  checksum: 10/2294b086cba5b8eb0e0880c8e15f44d7c11bb08f314bbeacda50ee7cfbdc464e6aaefe8ab56b1ed527bc7bb4e83f94425e8ee8bd3c92c3c2e5729284a19c9a3f
+  languageName: node
+  linkType: hard
+
+"@exodus/bitcoin-wallet-standard-features@npm:^0.0.0":
+  version: 0.0.0
+  resolution: "@exodus/bitcoin-wallet-standard-features@npm:0.0.0"
+  dependencies:
+    "@wallet-standard/base": "npm:^1.0.1"
+    "@wallet-standard/features": "npm:^1.0.3"
+  checksum: 10/877b9dd4965a6b3bd05c2e06e3af0f3a50467ceb4709a09164679a0e383dbf4817170b2c1b6fd1d1b42f70942fd2b4fcfc52929a8d434d232f333610d182beec
+  languageName: node
+  linkType: hard
+
+"@exodus/bitcoin-wallet-standard@npm:^0.0.0":
+  version: 0.0.0
+  resolution: "@exodus/bitcoin-wallet-standard@npm:0.0.0"
+  dependencies:
+    "@exodus/bitcoin-wallet-standard-core": "npm:^0.0.0"
+  checksum: 10/d723cfc104145334eee7b63afa0698d984b15dc1aae9a3015eb92efd377d4fef765bc6c732582957a3bfa76b1bbac776b2a30384e84266c7ba49160d359361f6
+  languageName: node
+  linkType: hard
+
 "@fal-works/esbuild-plugin-global-externals@npm:^2.1.2":
   version: 2.1.2
   resolution: "@fal-works/esbuild-plugin-global-externals@npm:2.1.2"
@@ -5691,6 +5729,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@metamask/address-book-controller@npm:^7.1.1":
+  version: 7.1.1
+  resolution: "@metamask/address-book-controller@npm:7.1.1"
+  dependencies:
+    "@metamask/base-controller": "npm:^9.0.1"
+    "@metamask/controller-utils": "npm:^11.19.0"
+    "@metamask/messenger": "npm:^1.0.0"
+    "@metamask/utils": "npm:^11.9.0"
+  checksum: 10/0e61958eab6c7f1472d270156398c819c648c9a3a093ed63abaadd7554330befa8149b929c8cb803f4b959fd0ceb71b42bf67b8680ea296f5e224df9b0216b44
+  languageName: node
+  linkType: hard
+
 "@metamask/address-book-controller@npm:^7.1.2":
   version: 7.1.2
   resolution: "@metamask/address-book-controller@npm:7.1.2"
@@ -6007,6 +6057,21 @@ __metadata:
   version: 1.11.0
   resolution: "@metamask/bitcoin-wallet-snap@npm:1.11.0"
   checksum: 10/1784489c84fddeff9d89bd71fdd50ffd204ca2cb58a257181dfa25afd6f0650013e0620cb9fc294f8962f0b225a032ee5c08f7f4392f2e7f2721ccf624e28237
+  languageName: node
+  linkType: hard
+
+"@metamask/bitcoin-wallet-standard@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@metamask/bitcoin-wallet-standard@npm:1.0.0"
+  dependencies:
+    "@exodus/bitcoin-wallet-standard": "npm:^0.0.0"
+    "@metamask/multichain-api-client": "npm:^0.11.0"
+    "@wallet-standard/base": "npm:^1.1.0"
+    "@wallet-standard/features": "npm:^1.1.0"
+    "@wallet-standard/wallet": "npm:^1.1.0"
+    bs58: "npm:^6.0.0"
+    jsontokens: "npm:^4.0.1"
+  checksum: 10/c0484f16aa4e290a47eab7b6a17afd08028a7b1d3d684b17114865b39f53120ef587aa854567659f5fac520bd2b1a5acf0d88e5528a73ea957e2399a2cb05f03
   languageName: node
   linkType: hard
 
@@ -7399,6 +7464,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@metamask/multichain-api-client@npm:^0.11.0":
+  version: 0.11.0
+  resolution: "@metamask/multichain-api-client@npm:0.11.0"
+  checksum: 10/fee3751b8bfdce08db37be205aa2d78de6544060ccbe57ff790ddf9c0aad830ee6cfb1844e4ea838ce97f0b7851badd0271cb0ec32ac42d3f7d4cfa15ccb1298
+  languageName: node
+  linkType: hard
+
 "@metamask/multichain-api-middleware@npm:^3.1.0":
   version: 3.1.2
   resolution: "@metamask/multichain-api-middleware@npm:3.1.2"
@@ -7783,7 +7855,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@metamask/profile-sync-controller@npm:28.1.0, @metamask/profile-sync-controller@npm:^28.0.2, @metamask/profile-sync-controller@npm:^28.1.0":
+"@metamask/profile-sync-controller@npm:28.1.0, @metamask/profile-sync-controller@npm:^28.1.0":
   version: 28.1.0
   resolution: "@metamask/profile-sync-controller@npm:28.1.0"
   dependencies:
@@ -7804,6 +7876,30 @@ __metadata:
     "@metamask/providers": ^22.0.0
     webextension-polyfill: ^0.10.0 || ^0.11.0 || ^0.12.0
   checksum: 10/33c318fe005e55b38b4d0d603806c9303b8deaddf8f98fc04f89ecb49cf26da2189ceea20ac6a4b1be5da49060a928d6788cb465b4451aa199c8e51172366213
+  languageName: node
+  linkType: hard
+
+"@metamask/profile-sync-controller@npm:^28.0.2":
+  version: 28.0.2
+  resolution: "@metamask/profile-sync-controller@npm:28.0.2"
+  dependencies:
+    "@metamask/address-book-controller": "npm:^7.1.1"
+    "@metamask/base-controller": "npm:^9.0.1"
+    "@metamask/keyring-controller": "npm:^25.1.1"
+    "@metamask/messenger": "npm:^1.0.0"
+    "@metamask/snaps-controllers": "npm:^19.0.0"
+    "@metamask/snaps-sdk": "npm:^11.0.0"
+    "@metamask/snaps-utils": "npm:^12.1.2"
+    "@metamask/utils": "npm:^11.9.0"
+    "@noble/ciphers": "npm:^1.3.0"
+    "@noble/hashes": "npm:^1.8.0"
+    immer: "npm:^9.0.6"
+    loglevel: "npm:^1.8.1"
+    siwe: "npm:^2.3.2"
+  peerDependencies:
+    "@metamask/providers": ^22.0.0
+    webextension-polyfill: ^0.10.0 || ^0.11.0 || ^0.12.0
+  checksum: 10/37cd8032f673436ff7a7b759287731691e864fb94b8a8b16f819de6956652bb51c4b020c1df5213113899feb5c36f03c98a35d8dce3629370725f94964ba5585
   languageName: node
   linkType: hard
 
@@ -8364,6 +8460,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@metamask/test-dapp-bitcoin@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "@metamask/test-dapp-bitcoin@npm:0.2.0"
+  dependencies:
+    "@wallet-standard/base": "npm:^1.1.0"
+    "@wallet-standard/core": "npm:^1.1.1"
+    bitcoinjs-lib: "npm:^7.0.0"
+    buffer: "npm:^6.0.3"
+    react: "npm:^18.3.1"
+    react-dom: "npm:^18.3.1"
+    sats-connect-v3: "npm:sats-connect@^3.5.0"
+    sats-connect-v4: "npm:sats-connect@^4.0.0"
+    vite-plugin-node-polyfills: "npm:^0.22.0"
+  checksum: 10/6a85979e7800f472e75596eebe6ecc916da6de0638db55e7a2714946306bf507dedc063c715b4c75c4e71176c70fd169cfb183552ca3af110bddffc81e7aeb93
+  languageName: node
+  linkType: hard
+
 "@metamask/test-dapp-multichain@npm:^0.17.0":
   version: 0.17.0
   resolution: "@metamask/test-dapp-multichain@npm:0.17.0"
@@ -8569,7 +8682,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@metamask/utils@npm:11.11.0, @metamask/utils@npm:^11.0.0, @metamask/utils@npm:^11.0.1, @metamask/utils@npm:^11.1.0, @metamask/utils@npm:^11.11.0, @metamask/utils@npm:^11.4.0, @metamask/utils@npm:^11.4.2, @metamask/utils@npm:^11.8.1, @metamask/utils@npm:^11.9.0":
+"@metamask/utils@npm:11.11.0, @metamask/utils@npm:^11.11.0":
   version: 11.11.0
   resolution: "@metamask/utils@npm:11.11.0"
   dependencies:
@@ -8585,6 +8698,25 @@ __metadata:
     semver: "npm:^7.5.4"
     uuid: "npm:^9.0.1"
   checksum: 10/c4381b9e451a9616bde84ac659bc0d1848ef06b6e605f877bfa065b78c8ed5015706683ea88a3387de5eaeb3a50d1af9af0994f04f9e06258d992598fe2be3bf
+  languageName: node
+  linkType: hard
+
+"@metamask/utils@npm:^11.0.0, @metamask/utils@npm:^11.0.1, @metamask/utils@npm:^11.1.0, @metamask/utils@npm:^11.4.0, @metamask/utils@npm:^11.4.2, @metamask/utils@npm:^11.8.1, @metamask/utils@npm:^11.9.0":
+  version: 11.10.0
+  resolution: "@metamask/utils@npm:11.10.0"
+  dependencies:
+    "@ethereumjs/tx": "npm:^4.2.0"
+    "@metamask/superstruct": "npm:^3.1.0"
+    "@noble/hashes": "npm:^1.3.1"
+    "@scure/base": "npm:^1.1.3"
+    "@types/debug": "npm:^4.1.7"
+    "@types/lodash": "npm:^4.17.20"
+    debug: "npm:^4.3.4"
+    lodash: "npm:^4.17.21"
+    pony-cause: "npm:^2.1.10"
+    semver: "npm:^7.5.4"
+    uuid: "npm:^9.0.1"
+  checksum: 10/691a268af66593b60e9807a069127993cea3cdc941f99d5d7ca4664868754f08945821f1787b2f3e99e4497df63ceb0af37a2419ad494da29a1fddffe94f5797
   languageName: node
   linkType: hard
 
@@ -9101,7 +9233,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@noble/secp256k1@npm:^1.7.0":
+"@noble/secp256k1@npm:^1.6.3, @noble/secp256k1@npm:^1.7.0":
   version: 1.7.2
   resolution: "@noble/secp256k1@npm:1.7.2"
   checksum: 10/ce1651f63ebf9269990dbc1002410d63e2f4379fcbf2bb7a567740997852a1fbdb353929e497cd9d09549c28e3edb036ac3905ff20ac5249ad32e64a852af955
@@ -11588,6 +11720,61 @@ __metadata:
     rollup:
       optional: true
   checksum: 10/598f628988af25541a9a6c6ef154aaf350f8be3238884e500cc0e47138684071abe490563c953f9bda9e8b113ecb1f99c11abfb9dbaf4f72cdd62e257a673fa3
+  languageName: node
+  linkType: hard
+
+"@sats-connect/core@npm:0.10.0":
+  version: 0.10.0
+  resolution: "@sats-connect/core@npm:0.10.0"
+  dependencies:
+    axios: "npm:1.12.0"
+    bitcoin-address-validation: "npm:3.0.0"
+    buffer: "npm:6.0.3"
+    jsontokens: "npm:4.0.1"
+  peerDependencies:
+    valibot: 1.1.0
+  checksum: 10/8c9a25adf995057529a909a8752942dad4fcb822ef4edbd2529e1987e96278de069f43f37aa26a127133597aae2f02e6d5cd9742a1c3ca1df085f55ed3bbe04d
+  languageName: node
+  linkType: hard
+
+"@sats-connect/core@npm:0.6.11":
+  version: 0.6.11
+  resolution: "@sats-connect/core@npm:0.6.11"
+  dependencies:
+    axios: "npm:1.8.4"
+    bitcoin-address-validation: "npm:2.2.3"
+    buffer: "npm:6.0.3"
+    jsontokens: "npm:4.0.1"
+  peerDependencies:
+    valibot: 1.1.0
+  checksum: 10/d7ef2429e471e233aca933b768a585bee6516c19c0d1fe2174e3a0e49bb2e5d4846f1627da2ca0ed3d4e2052c2a6d9804a0638f45b4a8445dba8ba51abbe8e0e
+  languageName: node
+  linkType: hard
+
+"@sats-connect/make-default-provider-config@npm:0.0.10":
+  version: 0.0.10
+  resolution: "@sats-connect/make-default-provider-config@npm:0.0.10"
+  dependencies:
+    "@sats-connect/ui": "npm:^0.0.6"
+    bowser: "npm:^2.11.0"
+  peerDependencies:
+    "@sats-connect/core": "*"
+    typescript: ^5.0.0
+  checksum: 10/3d7a50a562f3e8c4421a06eb7cdd720669ecac3e94ef769062fcc05fd90e517f267eff6b3c22313d88bb99d4bf111bdefe9a8fd8595ee143a03ab9df638271a5
+  languageName: node
+  linkType: hard
+
+"@sats-connect/ui@npm:0.0.7":
+  version: 0.0.7
+  resolution: "@sats-connect/ui@npm:0.0.7"
+  checksum: 10/bbe5a702de824edda0ced3404e4be93761bf35253d9444188dc126eef6f4ddc6b585f0736250b2aa0ea7d3c81e42dcd762393611a355e76c310474b26d94bc49
+  languageName: node
+  linkType: hard
+
+"@sats-connect/ui@npm:^0.0.6":
+  version: 0.0.6
+  resolution: "@sats-connect/ui@npm:0.0.6"
+  checksum: 10/d227f354386478f63ca892c5d25b6d445a6803f735d4b861ce271531cecf59797763a33dabcbb5f5d22838a64b5a46fd378d749b60ba0c453406c2c023b92eb9
   languageName: node
   linkType: hard
 
@@ -17649,7 +17836,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wallet-standard/core@npm:^1.0.3":
+"@wallet-standard/core@npm:^1.0.3, @wallet-standard/core@npm:^1.1.1":
   version: 1.1.1
   resolution: "@wallet-standard/core@npm:1.1.1"
   dependencies:
@@ -17674,7 +17861,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wallet-standard/features@npm:^1.1.0":
+"@wallet-standard/features@npm:^1.0.3, @wallet-standard/features@npm:^1.1.0":
   version: 1.1.0
   resolution: "@wallet-standard/features@npm:1.1.0"
   dependencies:
@@ -18574,12 +18761,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn-walk@npm:^8.0.0, acorn-walk@npm:^8.0.2":
+"acorn-walk@npm:^8.0.0":
   version: 8.3.5
   resolution: "acorn-walk@npm:8.3.5"
   dependencies:
     acorn: "npm:^8.11.0"
   checksum: 10/f52a158a1c1f00c82702c7eb9b8ae8aad79748a7689241dcc2d797dce680f1dcb15c78f312f687eeacdfb3a4cac4b87d04af470f0201bd56c6661fca6f94b195
+  languageName: node
+  linkType: hard
+
+"acorn-walk@npm:^8.0.2":
+  version: 8.2.0
+  resolution: "acorn-walk@npm:8.2.0"
+  checksum: 10/e69f7234f2adfeb16db3671429a7c80894105bd7534cb2032acf01bb26e6a847952d11a062d071420b43f8d82e33d2e57f26fe87d9cce0853e8143d8910ff1de
   languageName: node
   linkType: hard
 
@@ -18601,12 +18795,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn@npm:^8.0.4, acorn@npm:^8.1.0, acorn@npm:^8.10.0, acorn@npm:^8.11.0, acorn@npm:^8.14.0, acorn@npm:^8.15.0, acorn@npm:^8.2.4, acorn@npm:^8.8.1, acorn@npm:^8.9.0":
+"acorn@npm:^8.0.4, acorn@npm:^8.11.0":
   version: 8.16.0
   resolution: "acorn@npm:8.16.0"
   bin:
     acorn: bin/acorn
   checksum: 10/690c673bb4d61b38ef82795fab58526471ad7f7e67c0e40c4ff1e10ecd80ce5312554ef633c9995bfc4e6d170cef165711f9ca9e49040b62c0c66fbf2dd3df2b
+  languageName: node
+  linkType: hard
+
+"acorn@npm:^8.1.0, acorn@npm:^8.10.0, acorn@npm:^8.14.0, acorn@npm:^8.15.0, acorn@npm:^8.2.4, acorn@npm:^8.8.1, acorn@npm:^8.9.0":
+  version: 8.15.0
+  resolution: "acorn@npm:8.15.0"
+  bin:
+    acorn: bin/acorn
+  checksum: 10/77f2de5051a631cf1729c090e5759148459cdb76b5f5c70f890503d629cf5052357b0ce783c0f976dd8a93c5150f59f6d18df1def3f502396a20f81282482fa4
   languageName: node
   linkType: hard
 
@@ -19957,6 +20160,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"base58-js@npm:^3.0.2":
+  version: 3.0.3
+  resolution: "base58-js@npm:3.0.3"
+  checksum: 10/62bad85b233290102ec3acdd47f604a3f657e20c1cb8a2de960c645f5f34d4a15806ece82e0fec75af5c66ea020d37be3c9daa00b92652570b7c43c4ecf7224a
+  languageName: node
+  linkType: hard
+
 "base64-arraybuffer@npm:^0.1.5":
   version: 0.1.5
   resolution: "base64-arraybuffer@npm:0.1.5"
@@ -20149,6 +20359,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bip174@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "bip174@npm:3.0.0"
+  dependencies:
+    uint8array-tools: "npm:^0.0.9"
+    varuint-bitcoin: "npm:^2.0.0"
+  checksum: 10/b698437e5461cd1f02fc2f24bc074684909cf59ecd85da246000473d88c7a9bf7c2fe62b88ac84af33c3c1c60b17d7a85fb17e5cfa17d0053fb3d9fa0f7ea844
+  languageName: node
+  linkType: hard
+
 "bip66@npm:^2.0.0":
   version: 2.0.0
   resolution: "bip66@npm:2.0.0"
@@ -20156,7 +20376,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bitcoin-address-validation@npm:^2.2.3":
+"bitcoin-address-validation@npm:2.2.3, bitcoin-address-validation@npm:^2.2.3":
   version: 2.2.3
   resolution: "bitcoin-address-validation@npm:2.2.3"
   dependencies:
@@ -20167,10 +20387,36 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bitcoin-address-validation@npm:3.0.0":
+  version: 3.0.0
+  resolution: "bitcoin-address-validation@npm:3.0.0"
+  dependencies:
+    base58-js: "npm:^3.0.2"
+    bech32: "npm:^2.0.0"
+    sha256-uint8array: "npm:^0.10.3"
+  checksum: 10/3703f27501ea9c3bebad2c5a0448850a5c13f4d2df419ae72bfc458ff658283d29cc24e4cb34b99d5c6b5dec4bb58b3897456934213efd7b6f758bc87c81293b
+  languageName: node
+  linkType: hard
+
 "bitcoin-ops@npm:^1.3.0, bitcoin-ops@npm:^1.4.1":
   version: 1.4.1
   resolution: "bitcoin-ops@npm:1.4.1"
   checksum: 10/3daa3303d6af49c0727041b5d7801a20c5806d00f1cc1afa2d53099974e30a7b1e7e9e578723dd25f5e120903f2725c595c0205d5d99a6578ad65213d74d806d
+  languageName: node
+  linkType: hard
+
+"bitcoinjs-lib@npm:^7.0.0":
+  version: 7.0.1
+  resolution: "bitcoinjs-lib@npm:7.0.1"
+  dependencies:
+    "@noble/hashes": "npm:^1.2.0"
+    bech32: "npm:^2.0.0"
+    bip174: "npm:^3.0.0"
+    bs58check: "npm:^4.0.0"
+    uint8array-tools: "npm:^0.0.9"
+    valibot: "npm:^1.2.0"
+    varuint-bitcoin: "npm:^2.0.0"
+  checksum: 10/3656f9c64f38adc946cd6e099faf3e479910c6f1baf1f8188329c73d1b202b260e63e505f201eb0522ef3830f11854804c811f9d89bae50c6fa75d7a7a20f530
   languageName: node
   linkType: hard
 
@@ -31735,6 +31981,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jsontokens@npm:4.0.1, jsontokens@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "jsontokens@npm:4.0.1"
+  dependencies:
+    "@noble/hashes": "npm:^1.1.2"
+    "@noble/secp256k1": "npm:^1.6.3"
+    base64-js: "npm:^1.5.1"
+  checksum: 10/b1b2dbd29b7f491f31934bd5385555ae11b76ce853141d6b3bb39d54045d0e654d3cdcc159a02765b017b63766b4f7cdb7b1b394be570636c7b942f5f9e781f2
+  languageName: node
+  linkType: hard
+
 "jsonwebtoken@npm:^9.0.2":
   version: 9.0.2
   resolution: "jsonwebtoken@npm:9.0.2"
@@ -33323,6 +33580,7 @@ __metadata:
     "@metamask/auto-changelog": "npm:^5.3.1"
     "@metamask/base-controller": "npm:^9.0.1"
     "@metamask/bitcoin-wallet-snap": "npm:^1.11.0"
+    "@metamask/bitcoin-wallet-standard": "npm:^1.0.0"
     "@metamask/bridge-controller": "npm:^72.0.0"
     "@metamask/bridge-status-controller": "npm:^71.2.0"
     "@metamask/browser-passworder": "npm:^6.0.0"
@@ -33440,6 +33698,7 @@ __metadata:
     "@metamask/superstruct": "npm:^3.2.1"
     "@metamask/test-bundler": "npm:^1.0.0"
     "@metamask/test-dapp": "npm:9.3.0"
+    "@metamask/test-dapp-bitcoin": "npm:^0.2.0"
     "@metamask/test-dapp-multichain": "npm:^0.17.0"
     "@metamask/test-dapp-solana": "npm:^0.3.1"
     "@metamask/test-dapp-tron": "npm:^0.3.1"
@@ -33652,6 +33911,7 @@ __metadata:
     jest-preview: "npm:^0.3.1"
     jsdom: "npm:^16.7.0"
     json-schema-to-ts: "npm:^3.0.1"
+    jsontokens: "npm:^4.0.1"
     jsonwebtoken: "npm:^9.0.2"
     koa: "npm:^3.1.1"
     labeled-stream-splicer: "npm:^2.0.2"
@@ -37461,7 +37721,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"qs@npm:^6.10.0, qs@npm:^6.12.3, qs@npm:^6.14.0, qs@npm:^6.14.1, qs@npm:^6.15.2, qs@npm:^6.4.0":
+"qs@npm:^6.10.0, qs@npm:^6.12.3, qs@npm:^6.14.0, qs@npm:^6.14.1, qs@npm:^6.4.0":
+  version: 6.14.2
+  resolution: "qs@npm:6.14.2"
+  dependencies:
+    side-channel: "npm:^1.1.0"
+  checksum: 10/682933a85bb4b7bd0d66e13c0a40d9e612b5e4bcc2cb9238f711a9368cd22d91654097a74fff93551e58146db282c56ac094957dfdc60ce64ea72c3c9d7779ac
+  languageName: node
+  linkType: hard
+
+"qs@npm:^6.15.2":
   version: 6.15.2
   resolution: "qs@npm:6.15.2"
   dependencies:
@@ -39917,6 +40186,30 @@ __metadata:
   bin:
     sass-lookup: bin/cli.js
   checksum: 10/90a06d5b0545615919f619608019a731eee81939cd0f1f88ed006060222f57de797ad20fc0eb103e13e6a9ff3e620af773e9f3e2ddf69a99fb2ccf4513f47fa4
+  languageName: node
+  linkType: hard
+
+"sats-connect-v3@npm:sats-connect@^3.5.0":
+  version: 3.6.1
+  resolution: "sats-connect@npm:3.6.1"
+  dependencies:
+    "@sats-connect/core": "npm:0.6.11"
+    "@sats-connect/make-default-provider-config": "npm:0.0.10"
+    "@sats-connect/ui": "npm:0.0.7"
+    valibot: "npm:1.1.0"
+  checksum: 10/0f6098b0578d4b223729b6164019fafdd84e52859ff7532daf8cdfa6c287ddbfb38139db7cecc49a12d47b4b830777dea39840cef7dc15f61c3187c32d5e1ccc
+  languageName: node
+  linkType: hard
+
+"sats-connect-v4@npm:sats-connect@^4.0.0":
+  version: 4.2.1
+  resolution: "sats-connect@npm:4.2.1"
+  dependencies:
+    "@sats-connect/core": "npm:0.10.0"
+    "@sats-connect/make-default-provider-config": "npm:0.0.10"
+    "@sats-connect/ui": "npm:0.0.7"
+    valibot: "npm:1.1.0"
+  checksum: 10/89dd2c367d348d23e8f8ad8acf2ffb41cc5881722b1b9afde4b674e1280fae2383e412bdc7751641c877a412fcad91684ebb8e5a26695b8f3167944d908df3cc
   languageName: node
   linkType: hard
 
@@ -43151,6 +43444,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"uint8array-tools@npm:^0.0.9":
+  version: 0.0.9
+  resolution: "uint8array-tools@npm:0.0.9"
+  checksum: 10/ea924e6d574f8c24d94400f0635eeffbeb0190fd2e4b781bb8e43b089c799a3d8c11c9b75d7c68524bc7e18f7ffc3d942f122ecf729746ba51612a8463848943
+  languageName: node
+  linkType: hard
+
 "uint8arrays@npm:3.1.0":
   version: 3.1.0
   resolution: "uint8arrays@npm:3.1.0"
@@ -44152,7 +44452,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"valibot@npm:1.3.1":
+"valibot@npm:1.1.0":
+  version: 1.1.0
+  resolution: "valibot@npm:1.1.0"
+  peerDependencies:
+    typescript: ">=5"
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 10/667c99e3ec2825ea97c20f37add7fe7eb9d15fb338c5f49c166ffba13a6f4516c77c060083e1c6bda77a2275c4d37400b711d284bbea03fd4ae160bbca34112c
+  languageName: node
+  linkType: hard
+
+"valibot@npm:1.3.1, valibot@npm:^1.2.0":
   version: 1.3.1
   resolution: "valibot@npm:1.3.1"
   peerDependencies:
@@ -44244,7 +44556,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"varuint-bitcoin@npm:2.0.0":
+"varuint-bitcoin@npm:2.0.0, varuint-bitcoin@npm:^2.0.0":
   version: 2.0.0
   resolution: "varuint-bitcoin@npm:2.0.0"
   dependencies:
@@ -45292,7 +45604,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ws@npm:*, ws@npm:^8.0.0, ws@npm:^8.11.0, ws@npm:^8.13.0, ws@npm:^8.18.0, ws@npm:^8.18.3, ws@npm:^8.19.0, ws@npm:^8.2.3, ws@npm:^8.20.1, ws@npm:^8.5.0, ws@npm:^8.8.0":
+"ws@npm:*, ws@npm:^8.0.0, ws@npm:^8.11.0, ws@npm:^8.13.0, ws@npm:^8.18.0, ws@npm:^8.18.3, ws@npm:^8.2.3, ws@npm:^8.20.1, ws@npm:^8.5.0, ws@npm:^8.8.0":
   version: 8.20.1
   resolution: "ws@npm:8.20.1"
   peerDependencies:
@@ -45328,6 +45640,21 @@ __metadata:
     utf-8-validate:
       optional: true
   checksum: 10/9c796b84ba80ffc2c2adcdfc9c8e9a219ba99caa435c9a8d45f9ac593bba325563b3f83edc5eb067cc6d21b9a6bf2c930adf76dd40af5f58a5ca6859e81858f0
+  languageName: node
+  linkType: hard
+
+"ws@npm:^8.19.0":
+  version: 8.20.0
+  resolution: "ws@npm:8.20.0"
+  peerDependencies:
+    bufferutil: ^4.0.1
+    utf-8-validate: ">=5.0.2"
+  peerDependenciesMeta:
+    bufferutil:
+      optional: true
+    utf-8-validate:
+      optional: true
+  checksum: 10/b7ab934b21ffdea9f25a5af5097e8c1ec7625db553bca026c5a23e35b7c236f3fb89782f2b57fab9da553864512f9aa7d245827ef998d26ffa1b2187a19a6d10
   languageName: node
   linkType: hard
 
