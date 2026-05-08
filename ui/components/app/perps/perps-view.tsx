@@ -36,6 +36,7 @@ import {
   PERPS_EVENT_PROPERTY,
   PERPS_EVENT_VALUE,
 } from '../../../../shared/constants/perps-events';
+import { useSelectedAccountComplianceGate } from '../compliance';
 import { PerpsGeoBlockModal } from './perps-geo-block-modal';
 import { usePerpsDepositConfirmation } from './hooks/usePerpsDepositConfirmation';
 import { usePerpsWithdrawNavigation } from './hooks/usePerpsWithdrawNavigation';
@@ -72,6 +73,7 @@ export const PerpsView: React.FC = () => {
   const isTestnet = useSelector(selectPerpsIsTestnet);
   const tutorialCompleted = useSelector(selectTutorialCompleted);
   const { isEligible } = usePerpsEligibility();
+  const { gate } = useSelectedAccountComplianceGate();
   const { trigger: triggerDeposit } = usePerpsDepositConfirmation();
   const { trigger: triggerWithdraw } = usePerpsWithdrawNavigation();
   const [isCloseAllPending, setIsCloseAllPending] = useState(false);
@@ -138,35 +140,37 @@ export const PerpsView: React.FC = () => {
   }, []);
 
   const handleCloseAllPositions = useCallback(async () => {
-    if (!isEligible) {
-      setIsGeoBlockModalOpen(true);
-      return;
-    }
-    if (positions.length === 0) {
-      return;
-    }
-    setBatchActionError(null);
-    setIsCloseAllPending(true);
-    try {
-      const result = await submitRequestToBackground<BatchCloseResult>(
-        'perpsClosePositions',
-        [{ closeAll: true }],
-      );
-      if (!result?.success) {
-        setBatchActionError(t('somethingWentWrong'));
+    await gate(async () => {
+      if (!isEligible) {
+        setIsGeoBlockModalOpen(true);
         return;
       }
-      const fresh = await submitRequestToBackground<Position[]>(
-        'perpsGetPositions',
-        [],
-      );
-      applyPositionsSnapshot(fresh ?? []);
-    } catch {
-      setBatchActionError(t('somethingWentWrong'));
-    } finally {
-      setIsCloseAllPending(false);
-    }
-  }, [isEligible, applyPositionsSnapshot, positions.length, t]);
+      if (positions.length === 0) {
+        return;
+      }
+      setBatchActionError(null);
+      setIsCloseAllPending(true);
+      try {
+        const result = await submitRequestToBackground<BatchCloseResult>(
+          'perpsClosePositions',
+          [{ closeAll: true }],
+        );
+        if (!result?.success) {
+          setBatchActionError(t('somethingWentWrong'));
+          return;
+        }
+        const fresh = await submitRequestToBackground<Position[]>(
+          'perpsGetPositions',
+          [],
+        );
+        applyPositionsSnapshot(fresh ?? []);
+      } catch {
+        setBatchActionError(t('somethingWentWrong'));
+      } finally {
+        setIsCloseAllPending(false);
+      }
+    });
+  }, [gate, isEligible, applyPositionsSnapshot, positions.length, t]);
 
   const handleCancelAllOrders = useCallback(async () => {
     if (!isEligible) {
