@@ -23,48 +23,42 @@ describe('ComplianceServiceInit', () => {
     globalThis.fetch = originalFetch;
   });
 
-  it.each([ENVIRONMENT.PRODUCTION, ENVIRONMENT.RELEASE_CANDIDATE])(
-    'creates ComplianceService with production environment for %s builds',
-    (environment) => {
-      process.env.METAMASK_ENVIRONMENT = environment;
-      const request = {
-        ...buildControllerInitRequestMock(),
-        controllerMessenger: {
-          call: jest.fn(),
-        } as unknown as ComplianceServiceMessenger,
-        initMessenger: undefined,
-      };
+  it('creates ComplianceService with production environment for production builds', () => {
+    process.env.METAMASK_ENVIRONMENT = ENVIRONMENT.PRODUCTION;
+    const request = {
+      ...buildControllerInitRequestMock(),
+      controllerMessenger: {
+        call: jest.fn(),
+      } as unknown as ComplianceServiceMessenger,
+      initMessenger: undefined,
+    };
 
-      const result = ComplianceServiceInit(request);
+    const result = ComplianceServiceInit(request);
 
-      expect(result.messengerClient).toBeDefined();
-      expect(ComplianceServiceMock).toHaveBeenCalledWith({
-        messenger: request.controllerMessenger,
-        fetch: expect.any(Function),
-        env: 'production',
-      });
-    },
-  );
+    expect(result.messengerClient).toBeDefined();
+    expect(ComplianceServiceMock).toHaveBeenCalledWith({
+      messenger: request.controllerMessenger,
+      fetch: expect.any(Function),
+      env: 'production',
+    });
+  });
 
-  it.each([ENVIRONMENT.DEVELOPMENT, ENVIRONMENT.TESTING])(
-    'creates ComplianceService with development environment for %s builds',
-    (environment) => {
-      process.env.METAMASK_ENVIRONMENT = environment;
-      const request = {
-        ...buildControllerInitRequestMock(),
-        controllerMessenger: {
-          call: jest.fn(),
-        } as unknown as ComplianceServiceMessenger,
-        initMessenger: undefined,
-      };
+  it('creates ComplianceService with development environment outside production builds', () => {
+    process.env.METAMASK_ENVIRONMENT = ENVIRONMENT.DEVELOPMENT;
+    const request = {
+      ...buildControllerInitRequestMock(),
+      controllerMessenger: {
+        call: jest.fn(),
+      } as unknown as ComplianceServiceMessenger,
+      initMessenger: undefined,
+    };
 
-      ComplianceServiceInit(request);
+    ComplianceServiceInit(request);
 
-      expect(ComplianceServiceMock).toHaveBeenCalledWith({
-        messenger: request.controllerMessenger,
-        fetch: expect.any(Function),
-        env: 'development',
-      });
-    },
-  );
+    expect(ComplianceServiceMock).toHaveBeenCalledWith({
+      messenger: request.controllerMessenger,
+      fetch: expect.any(Function),
+      env: 'development',
+    });
+  });
 });
