@@ -1255,6 +1255,20 @@ const PerpsOrderEntryPage: React.FC = () => {
     triggerDeposit,
   ]);
 
+  const handleAddFunds = useCallback(async () => {
+    await gate(async () => {
+      if (!isEligible) {
+        setIsGeoBlockModalOpen(true);
+        return;
+      }
+      if (!selectedAddress || isDepositLoading) {
+        return;
+      }
+
+      await triggerDeposit();
+    });
+  }, [gate, isDepositLoading, isEligible, selectedAddress, triggerDeposit]);
+
   const handleFormSubmit = useCallback(
     (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
@@ -1439,7 +1453,7 @@ const PerpsOrderEntryPage: React.FC = () => {
           existingPosition={existingPositionForOrder}
           midPrice={topOfBook?.midPrice}
           onOrderTypeChange={setOrderType}
-          onAddFunds={triggerDeposit}
+          onAddFunds={handleAddFunds}
           initialLeverage={initialLeverage}
           autoFocusUsd={orderMode !== 'close'}
           autoFocusLimitPrice={orderMode !== 'close'}
