@@ -16,23 +16,18 @@ import {
 import { NotificationDetail } from '../notification-detail';
 import {
   AvatarIcon,
-  Box,
   Icon,
   IconName,
   IconSize,
   Text,
 } from '../../component-library';
+import { Box, BoxAlignItems, BoxBackgroundColor, BoxFlexDirection, BoxJustifyContent } from '@metamask/design-system-react';
 import {
-  AlignItems,
   BackgroundColor,
-  Display,
   FontWeight,
-  JustifyContent,
   TextVariant,
   TextColor,
-  BlockSize,
   IconColor,
-  FlexDirection,
 } from '../../../helpers/constants/design-system';
 import Preloader from '../../ui/icon/preloader/preloader-icon.component';
 import { useBoolean } from '../../../hooks/useBoolean';
@@ -55,8 +50,7 @@ export type NotificationDetailNetworkFeeProps = {
 
 const FeeDetail = ({ label, value }: { label: string; value: string }) => (
   <Box
-    display={Display.Flex}
-    justifyContent={JustifyContent.spaceBetween}
+    justifyContent={BoxJustifyContent.Between}
     padding={4}
   >
     <Text
@@ -151,12 +145,9 @@ const NotificationDetailNetworkFee_: FC<NotificationDetailNetworkFeeProps> = ({
   if (!networkFees && !networkFeesError) {
     return (
       <Box
-        height={BlockSize.Full}
-        width={BlockSize.Full}
-        display={Display.Flex}
-        justifyContent={JustifyContent.center}
-        alignItems={AlignItems.center}
-        flexDirection={FlexDirection.Column}
+        className="h-full w-full flex-col"
+        justifyContent={BoxJustifyContent.Center}
+        alignItems={BoxAlignItems.Center}
         data-testid="notifications-list-loading"
       >
         <Preloader size={36} />
@@ -167,12 +158,9 @@ const NotificationDetailNetworkFee_: FC<NotificationDetailNetworkFeeProps> = ({
   if (!networkFees && networkFeesError) {
     return (
       <Box
-        height={BlockSize.Full}
-        width={BlockSize.Full}
-        display={Display.Flex}
-        justifyContent={JustifyContent.center}
-        alignItems={AlignItems.center}
-        flexDirection={FlexDirection.Column}
+        className="h-full w-full flex-col"
+        justifyContent={BoxJustifyContent.Center}
+        alignItems={BoxAlignItems.Center}
         data-testid="notifications-list-loading"
         paddingTop={4}
       >
@@ -189,8 +177,8 @@ const NotificationDetailNetworkFee_: FC<NotificationDetailNetworkFeeProps> = ({
 
   return (
     <Box
-      width={BlockSize.Full}
-      backgroundColor={BackgroundColor.transparent}
+      className="w-full"
+      backgroundColor={BoxBackgroundColor.Transparent}
       padding={0}
     >
       <NotificationDetail
@@ -223,35 +211,35 @@ const NotificationDetailNetworkFee_: FC<NotificationDetailNetworkFeeProps> = ({
         }
         secondaryTextRight={
           <Box
+            asChild
+            className="inline-flex"
+            alignItems={BoxAlignItems.Center}
+            justifyContent={BoxJustifyContent.End}
+            gap={2}
+            backgroundColor={BoxBackgroundColor.Transparent}
             paddingLeft={0}
             paddingRight={0}
             paddingTop={0}
-            backgroundColor={BackgroundColor.transparent}
-            display={Display.InlineFlex}
-            alignItems={AlignItems.center}
-            justifyContent={JustifyContent.flexEnd}
-            gap={2}
-            as="button"
-            onClick={handleClick}
           >
-            <Text color={TextColor.primaryDefault} variant={TextVariant.bodyMd}>
-              {t('notificationDetail')}
-            </Text>
-            <Icon
-              name={isOpen ? IconName.ArrowUp : IconName.ArrowDown}
-              color={IconColor.primaryDefault}
-              size={IconSize.Sm}
-              marginInlineEnd={1}
-            />
+            <button onClick={handleClick}>
+              <Text color={TextColor.primaryDefault} variant={TextVariant.bodyMd}>
+                {t('notificationDetail')}
+              </Text>
+              <Icon
+                name={isOpen ? IconName.ArrowUp : IconName.ArrowDown}
+                color={IconColor.primaryDefault}
+                size={IconSize.Sm}
+                marginInlineEnd={1}
+              />
+            </button>
           </Box>
         }
       />
       {isOpen && (
         <Box
-          display={Display.Flex}
-          flexDirection={FlexDirection.Column}
-          justifyContent={JustifyContent.flexStart}
-          width={BlockSize.Full}
+          flexDirection={BoxFlexDirection.Column}
+          justifyContent={BoxJustifyContent.Start}
+          className="w-full"
         >
           <FeeDetail
             label={t('notificationDetailGasLimit')}
