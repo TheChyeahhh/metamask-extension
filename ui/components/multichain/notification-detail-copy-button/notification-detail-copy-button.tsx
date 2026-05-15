@@ -1,17 +1,13 @@
 import React, { useContext } from 'react';
 import type { FC } from 'react';
 import { NotificationServicesController } from '@metamask/notification-services-controller';
+import { Box } from '@metamask/design-system-react';
 import { MetaMetricsContext } from '../../../contexts/metametrics';
 import {
   MetaMetricsEventCategory,
   MetaMetricsEventName,
 } from '../../../../shared/constants/metametrics';
-import {
-  ButtonBase,
-  IconName,
-  ButtonBaseSize,
-} from '../../component-library';
-import { Box } from '@metamask/design-system-react';
+import { ButtonBase, IconName, ButtonBaseSize } from '../../component-library';
 import {
   AlignItems,
   BackgroundColor,

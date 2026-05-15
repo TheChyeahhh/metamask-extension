@@ -1,10 +1,14 @@
 import React from 'react';
 import type { FC } from 'react';
 
-import { Box, BoxAlignItems, BoxBackgroundColor, BoxFlexDirection, BoxJustifyContent } from '@metamask/design-system-react';
 import {
-  TextAlign,
-} from '../../../helpers/constants/design-system';
+  Box,
+  BoxAlignItems,
+  BoxBackgroundColor,
+  BoxFlexDirection,
+  BoxJustifyContent,
+} from '@metamask/design-system-react';
+import { TextAlign } from '../../../helpers/constants/design-system';
 
 export type NotificationDetailProps = {
   icon: JSX.Element;
@@ -49,9 +53,7 @@ export const NotificationDetail: FC<NotificationDetailProps> = ({
         className="h-full"
         alignItems={BoxAlignItems.Start}
       >
-        <Box className="h-full notification-detail__icon">
-          {icon}
-        </Box>
+        <Box className="h-full notification-detail__icon">{icon}</Box>
 
         <Box
           className="block text-left"
