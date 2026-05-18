@@ -132,7 +132,7 @@ export const AccountGroupBalance: React.FC<AccountGroupBalanceProps> = ({
       marginBottom={1}
     >
       <Box
-        className={classnames(`${classPrefix}-overview__primary-balance`, {
+        className={classnames('flex', `${classPrefix}-overview__primary-balance`, {
           [`${classPrefix}-overview__cached-balance`]: balanceIsCached,
         })}
         data-testid={`${classPrefix}-overview__primary-currency`}
