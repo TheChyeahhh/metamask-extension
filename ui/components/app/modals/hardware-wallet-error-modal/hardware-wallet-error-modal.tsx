@@ -600,14 +600,16 @@ export const HardwareWalletErrorModal: React.FC<HardwareWalletErrorModalProps> =
                             paddingRight={4}
                             alignItems={BoxAlignItems.Start}
                           >
-                            <Box asChild key={index}><li>
-                              <Text
-                                variant={TextVariant.bodyMd}
-                                color={TextColor.textDefault}
-                              >
-                                {instruction}
-                              </Text>
-                            </li></Box>
+                            <Box asChild key={index}>
+                              <li>
+                                <Text
+                                  variant={TextVariant.bodyMd}
+                                  color={TextColor.textDefault}
+                                >
+                                  {instruction}
+                                </Text>
+                              </li>
+                            </Box>
                           </Box>
                         ),
                       )}
