@@ -111,6 +111,8 @@ export class TronNode {
 
   #stdout = '';
 
+  #cleanupRegistered = false;
+
   readonly #trc10Balances: Record<
     string,
     Partial<Record<TronTrc10Symbol, string>>
@@ -152,8 +154,9 @@ export class TronNode {
   async start(options: TronLocalNodeOptions = {}): Promise<void> {
     this.#fundingAccount = undefined;
     const resolvedOptions = await resolveTronLocalNodeOptions(options);
-
     try {
+      // To ensure process will be killed if parent process gets interrupted.
+      this.#registerExitHandlers();
       await this.#startNativeJavaTron(resolvedOptions.ports);
       await this.waitForReady(120_000);
 
@@ -854,6 +857,21 @@ export class TronNode {
     if (this.#nodeProcessExitError) {
       throw this.#nodeProcessExitError;
     }
+  }
+
+  #registerExitHandlers(): void {
+    if (this.#cleanupRegistered) {
+      return;
+    }
+    this.#cleanupRegistered = true;
+
+    const cleanup = () => {
+      this.quit();
+    };
+
+    process.once('SIGINT', cleanup); // Ctrl+C
+    process.once('SIGTERM', cleanup); // kill / shutdown
+    process.once('SIGHUP', cleanup); // terminal closed
   }
 }
 
