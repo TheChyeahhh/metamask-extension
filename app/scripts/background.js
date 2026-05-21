@@ -1,3 +1,5 @@
+// Meaningless change to trigger a new build and test cycle
+
 /**
  * @file The entry point for the web extension singleton process.
  */
