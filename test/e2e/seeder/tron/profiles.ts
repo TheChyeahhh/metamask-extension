@@ -43,8 +43,7 @@ export function createTronStakedAccountOptions(
   return {
     ...portfolio,
     initialBalances: {
-      [address]:
-        TRON_PORTFOLIO_TRX_BALANCE_IN_SUN + STAKED_TRX_BALANCE_IN_SUN,
+      [address]: TRON_PORTFOLIO_TRX_BALANCE_IN_SUN + STAKED_TRX_BALANCE_IN_SUN,
     },
     stakedTrxBalances: {
       [address]: String(STAKED_TRX_BALANCE_IN_SUN),

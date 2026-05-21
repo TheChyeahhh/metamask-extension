@@ -19,9 +19,8 @@ export async function prepareLocalTronDapp(
     throw new Error('Local Tron node did not initialize a USDT TRC20 token');
   }
 
-  const packageJsonPath = require.resolve(
-    '@metamask/test-dapp-tron/package.json',
-  );
+  const packageJsonPath =
+    require.resolve('@metamask/test-dapp-tron/package.json');
   const sourceDirectory = join(packageJsonPath, '..', 'dist');
   const destinationDirectory = await fs.mkdtemp(
     join(tmpdir(), 'metamask-local-tron-dapp-'),

@@ -2,11 +2,8 @@ import { Suite } from 'mocha';
 import { sleep } from '@metamask/test-bundler/dist/utils';
 import FixtureBuilderV2 from '../../fixtures/fixture-builder-v2';
 import { Driver } from '../../webdriver/driver';
-import {
-  TRON_PORTFOLIO_ACCOUNT,
-} from './fixtures/environments';
+import { TRON_PORTFOLIO_ACCOUNT } from './fixtures/environments';
 import { withTronFixtures } from './fixtures/with-tron-fixtures';
-
 
 import { login } from '../../page-objects/flows/login.flow';
 import NonEvmHomepage from '../../page-objects/pages/home/non-evm-homepage';
@@ -35,13 +32,12 @@ describe('Tron Manual Testing', function (this: Suite) {
 
         const home = new NonEvmHomepage(driver);
         await home.checkPageIsLoaded();
-        console.info('================= INFO =================')
-        console.info('== Waiting during user manual testing ==')
-        console.info('========================================')
+        console.info('================= INFO =================');
+        console.info('== Waiting during user manual testing ==');
+        console.info('========================================');
         await sleep(60_000_000);
-        console.info('User manual testing session ended.')
+        console.info('User manual testing session ended.');
       },
     );
   });
-
 });

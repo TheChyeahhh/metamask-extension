@@ -58,7 +58,13 @@ await withTronFixtures({
       address,
       assets: [
         { type: 'native', symbol: 'TRX', balance: 6072392, decimals: 6 },
-        { type: 'trc20', symbol: 'USDT', balance: '2804595', decimals: 6, priceUsd: 1 },
+        {
+          type: 'trc20',
+          symbol: 'USDT',
+          balance: '2804595',
+          decimals: 6,
+          priceUsd: 1,
+        },
       ],
     },
   ],
@@ -94,7 +100,7 @@ accounts: [
     balance: 0.5,
     transactions: [esploraTransaction],
   },
-]
+];
 ```
 
 Validation performed:
@@ -125,10 +131,35 @@ await withSolanaFixtures({
     {
       address: DEFAULT_FIXTURE_SOLANA_ACCOUNT,
       assets: [
-        { type: 'native', symbol: 'SOL', name: 'Solana', balance: 50, decimals: 9, priceUsd: 180.5 },
-        { type: 'spl-token', symbol: 'USDC', name: 'USD Coin', decimals: 6, balance: '8908267', priceUsd: 1 },
-        { type: 'spl-token-2022', symbol: 'TEST22', name: 'Token 2022', decimals: 6, balance: '1000000' },
-        { type: 'nft', name: 'Test NFT', symbol: 'TNFT', uri: 'https://example.test/metadata.json' },
+        {
+          type: 'native',
+          symbol: 'SOL',
+          name: 'Solana',
+          balance: 50,
+          decimals: 9,
+          priceUsd: 180.5,
+        },
+        {
+          type: 'spl-token',
+          symbol: 'USDC',
+          name: 'USD Coin',
+          decimals: 6,
+          balance: '8908267',
+          priceUsd: 1,
+        },
+        {
+          type: 'spl-token-2022',
+          symbol: 'TEST22',
+          name: 'Token 2022',
+          decimals: 6,
+          balance: '1000000',
+        },
+        {
+          type: 'nft',
+          name: 'Test NFT',
+          symbol: 'TNFT',
+          uri: 'https://example.test/metadata.json',
+        },
       ],
     },
   ],
