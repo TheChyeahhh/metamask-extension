@@ -1,13 +1,14 @@
 import { Suite } from 'mocha';
 import { sleep } from '@metamask/test-bundler/dist/utils';
+
 import FixtureBuilderV2 from '../../fixtures/fixture-builder-v2';
 import { Driver } from '../../webdriver/driver';
-import { TRON_PORTFOLIO_ACCOUNT } from './fixtures/environments';
-import { withTronFixtures } from './fixtures/with-tron-fixtures';
-
 import { login } from '../../page-objects/flows/login.flow';
 import NonEvmHomepage from '../../page-objects/pages/home/non-evm-homepage';
 import { selectTronNetwork } from '../../page-objects/flows/tron-network.flow';
+
+import { TRON_PORTFOLIO_ACCOUNT } from './fixtures/environments';
+import { withTronFixtures } from './fixtures/with-tron-fixtures';
 
 describe('Tron Manual Testing', function (this: Suite) {
   this.timeout(60_000_000);

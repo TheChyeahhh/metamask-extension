@@ -90,33 +90,33 @@ describe('Tron Send', function (this: Suite) {
   });
 
   // Doesn't seem to accurately describe the current behavior so commenting out in the meantime.
-  it.skip('blocks USDT send when TRX balance cannot cover energy fee', async function () {
-    await withTronFixtures(
-      {
-        accounts: [TRON_LOW_TRX_WITH_USDT_ACCOUNT],
-        fixtures: new FixtureBuilderV2().build(),
-        title: this.test?.fullTitle(),
-      },
-      async ({
-        driver,
-        localNodes,
-      }: {
-        driver: Driver;
-        localNodes: unknown[];
-      }) => {
-        const sendPage = await landOnTronSendScreen({
-          driver,
-          symbol: 'USDT',
-          assetId: getTronTrc20AssetId(localNodes, 'USDT'),
-          expectedNativeBalance: null,
-        });
-        await sendPage.fillRecipient(TRON_RECIPIENT_ADDRESS);
-        await sendPage.fillAmount('1');
-        await sendPage.checkInvalidAmountError();
-        await sendPage.checkContinueButtonIsDisabled();
-      },
-    );
-  });
+  // it('blocks USDT send when TRX balance cannot cover energy fee', async function () {
+  //   await withTronFixtures(
+  //     {
+  //       accounts: [TRON_LOW_TRX_WITH_USDT_ACCOUNT],
+  //       fixtures: new FixtureBuilderV2().build(),
+  //       title: this.test?.fullTitle(),
+  //     },
+  //     async ({
+  //       driver,
+  //       localNodes,
+  //     }: {
+  //       driver: Driver;
+  //       localNodes: unknown[];
+  //     }) => {
+  //       const sendPage = await landOnTronSendScreen({
+  //         driver,
+  //         symbol: 'USDT',
+  //         assetId: getTronTrc20AssetId(localNodes, 'USDT'),
+  //         expectedNativeBalance: null,
+  //       });
+  //       await sendPage.fillRecipient(TRON_RECIPIENT_ADDRESS);
+  //       await sendPage.fillAmount('1');
+  //       await sendPage.checkInvalidAmountError();
+  //       await sendPage.checkContinueButtonIsDisabled();
+  //     },
+  //   );
+  // });
 
   // ── TRX partial send ────────────────────────────────────────────────────────
 
