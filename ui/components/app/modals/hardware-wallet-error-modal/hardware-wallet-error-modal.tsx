@@ -600,7 +600,7 @@ export const HardwareWalletErrorModal: React.FC<HardwareWalletErrorModalProps> =
                             paddingRight={4}
                             alignItems={BoxAlignItems.Start}
                           >
-                            <Box asChild key={index}>
+                            <Box asChild>
                               <li>
                                 <Text
                                   variant={TextVariant.bodyMd}
