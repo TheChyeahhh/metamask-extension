@@ -569,7 +569,7 @@
     "@lavamoat/lavapack": "^7.0.22",
     "@lydell/node-pty": "^1.1.0",
     "@metamask-previews/bitcoin-regtest-up": "0.0.0-preview-82e080825",
-    "@metamask-previews/java-tron-up": "0.0.0-preview-73cf60340",
+    "@metamask-previews/java-tron-up": "0.0.0-preview-784cc181c",
     "@metamask-previews/solana-test-validator-up": "0.0.0-preview-9b6bf0851",
     "@metamask/api-specs": "^0.13.0",
     "@metamask/auto-changelog": "^5.3.1",
