@@ -1,6 +1,7 @@
 import { Driver } from '../../../webdriver/driver';
 import { NETWORK_TO_NAME_MAP } from '../../../../../shared/constants/network';
 import { veryLargeDelayMs } from '../../../helpers';
+import NetworkManager from '../network-manager';
 
 class AssetListPage {
   private readonly driver: Driver;
@@ -910,6 +911,25 @@ class AssetListPage {
         stableFor: veryLargeDelayMs,
       },
     );
+  }
+
+  async selectOnlyNetworkInFilter(
+    networkName: string,
+    tab: string = 'Popular',
+  ): Promise<void> {
+    console.log(`Selecting only ${networkName} in the asset list network filter`);
+    await this.openNetworksFilter();
+    const networkManager = new NetworkManager(this.driver);
+    await networkManager.selectTab(tab);
+    await networkManager.selectNetworkByNameWithWait(networkName);
+  }
+
+  async selectAllNetworksInFilter(tab: string = 'Popular'): Promise<void> {
+    console.log('Selecting all networks in the asset list network filter');
+    await this.openNetworksFilter();
+    const networkManager = new NetworkManager(this.driver);
+    await networkManager.selectTab(tab);
+    await networkManager.selectAllNetworks();
   }
 }
 
