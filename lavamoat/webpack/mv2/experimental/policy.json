@@ -699,73 +699,6 @@
         "TextEncoder": true
       }
     },
-    "@material-ui/core": {
-      "globals": {
-        "addEventListener": true,
-        "clearInterval": true,
-        "clearTimeout": true,
-        "console.error": true,
-        "console.warn": true,
-        "document": true,
-        "getComputedStyle": true,
-        "getSelection": true,
-        "performance.now": true,
-        "removeEventListener": true,
-        "setInterval": true,
-        "setTimeout": true
-      },
-      "packages": {
-        "@babel/runtime": true,
-        "@material-ui/core>@material-ui/styles": true,
-        "@material-ui/core>@material-ui/system": true,
-        "@material-ui/core>@material-ui/utils": true,
-        "@material-ui/core>clsx": true,
-        "@material-ui/core>popper.js": true,
-        "prop-types": true,
-        "react": true,
-        "react-dom": true,
-        "react-redux>react-is": true,
-        "react-transition-group": true
-      }
-    },
-    "@material-ui/core>@material-ui/styles": {
-      "globals": {
-        "console.error": true,
-        "console.warn": true,
-        "document.createComment": true,
-        "document.head": true
-      },
-      "packages": {
-        "@babel/runtime": true,
-        "@material-ui/core>@material-ui/utils": true,
-        "react-redux>hoist-non-react-statics": true,
-        "@material-ui/core>@material-ui/styles>jss-plugin-camel-case": true,
-        "@material-ui/core>@material-ui/styles>jss-plugin-default-unit": true,
-        "@material-ui/core>@material-ui/styles>jss-plugin-global": true,
-        "@material-ui/core>@material-ui/styles>jss-plugin-nested": true,
-        "@material-ui/core>@material-ui/styles>jss-plugin-props-sort": true,
-        "@material-ui/core>@material-ui/styles>jss-plugin-rule-value-function": true,
-        "@material-ui/core>@material-ui/styles>jss-plugin-vendor-prefixer": true,
-        "@material-ui/core>@material-ui/styles>jss": true,
-        "prop-types": true,
-        "react": true
-      }
-    },
-    "@material-ui/core>@material-ui/system": {
-      "globals": {
-        "console.error": true
-      },
-      "packages": {
-        "@babel/runtime": true,
-        "@material-ui/core>@material-ui/utils": true,
-        "prop-types": true
-      }
-    },
-    "@material-ui/core>@material-ui/utils": {
-      "packages": {
-        "@babel/runtime": true
-      }
-    },
     "@metamask/abi-utils": {
       "packages": {
         "@metamask/superstruct": true,
@@ -1015,7 +948,7 @@
       },
       "packages": {
         "@metamask/bridge-controller": true,
-        "@metamask/bridge-status-controller>@metamask/controller-utils": true,
+        "@metamask/controller-utils": true,
         "@metamask/keyring-controller": true,
         "@metamask/polling-controller": true,
         "@metamask/snaps-controllers": true,
@@ -1091,23 +1024,6 @@
       }
     },
     "@metamask/bridge-controller>@metamask/controller-utils": {
-      "globals": {
-        "Buffer.from": true,
-        "console.error": true,
-        "fetch": true,
-        "setTimeout": true
-      },
-      "packages": {
-        "@metamask/controller-utils>@metamask/ethjs-unit": true,
-        "@metamask/utils": true,
-        "ethereumjs-util>bn.js": true,
-        "buffer": true,
-        "eth-ens-namehash": true,
-        "eslint>fast-deep-equal": true,
-        "lodash": true
-      }
-    },
-    "@metamask/bridge-status-controller>@metamask/controller-utils": {
       "globals": {
         "Buffer.from": true,
         "console.error": true,
@@ -1397,7 +1313,7 @@
         "@metamask/keyring-controller": true,
         "@metamask/rpc-errors": true,
         "@metamask/superstruct": true,
-        "@metamask/eip-5792-middleware>@metamask/transaction-controller": true,
+        "@metamask/transaction-controller": true,
         "@metamask/utils": true,
         "lodash": true,
         "uuid": true
@@ -1737,7 +1653,7 @@
         "@metamask/delegation-core": true,
         "@metamask/delegation-deployments": true,
         "@metamask/snaps-utils": true,
-        "@metamask/gator-permissions-controller>@metamask/transaction-controller": true,
+        "@metamask/transaction-controller": true,
         "@metamask/utils": true
       }
     },
@@ -2366,7 +2282,7 @@
         "@metamask/base-controller": true,
         "@metamask/shield-controller>@metamask/controller-utils": true,
         "@metamask/signature-controller": true,
-        "@metamask/shield-controller>@metamask/transaction-controller": true,
+        "@metamask/transaction-controller": true,
         "@metamask/utils": true,
         "cockatiel": true,
         "lodash": true
@@ -2408,7 +2324,7 @@
         "@metamask/controller-utils>@metamask/eth-query": true,
         "@metamask/polling-controller": true,
         "@metamask/superstruct": true,
-        "@metamask/smart-transactions-controller>@metamask/transaction-controller": true,
+        "@metamask/transaction-controller": true,
         "@metamask/utils": true,
         "@metamask/smart-transactions-controller>bignumber.js": true,
         "lodash": true,
@@ -2547,7 +2463,7 @@
       },
       "packages": {
         "@metamask/polling-controller": true,
-        "@metamask/subscription-controller>@metamask/transaction-controller": true,
+        "@metamask/transaction-controller": true,
         "@metamask/utils": true,
         "@metamask/subscription-controller>bignumber.js": true
       }
@@ -2640,7 +2556,7 @@
         "@metamask/polling-controller": true,
         "@metamask/rpc-errors": true,
         "@metamask/superstruct": true,
-        "@metamask/user-operation-controller>@metamask/transaction-controller": true,
+        "@metamask/transaction-controller": true,
         "@metamask/utils": true,
         "ethereumjs-util>bn.js": true,
         "webpack>events": true,
@@ -2716,14 +2632,25 @@
     },
     "@mui/material": {
       "globals": {
+        "CSS": true,
         "DocumentFragment": true,
         "IntersectionObserver": true,
         "MutationObserver": true,
         "ResizeObserver": true,
+        "addEventListener": true,
+        "cancelAnimationFrame": true,
         "clearInterval": true,
         "clearTimeout": true,
         "console.error": true,
+        "console.warn": true,
+        "document.activeElement": true,
+        "document.addEventListener": true,
         "document.body": true,
+        "document.removeEventListener": true,
+        "getSelection": true,
+        "navigator": true,
+        "performance.now": true,
+        "removeEventListener": true,
         "requestAnimationFrame": true,
         "setInterval": true,
         "setTimeout": true
@@ -2738,6 +2665,7 @@
         "@emotion/react": true,
         "@mui/system": true,
         "@mui/system>@mui/utils": true,
+        "@popperjs/core": true,
         "clsx": true,
         "prop-types": true,
         "react": true,
@@ -4409,22 +4337,11 @@
         "react-beautiful-dnd>css-box-model>tiny-invariant": true
       }
     },
-    "@material-ui/core>@material-ui/styles>jss-plugin-vendor-prefixer>css-vendor": {
-      "globals": {
-        "document.createElement": true,
-        "document.documentElement": true,
-        "getComputedStyle": true
-      },
-      "packages": {
-        "@babel/runtime": true,
-        "@material-ui/core>@material-ui/styles>jss>is-in-browser": true
-      }
-    },
     "currency-formatter": {
       "packages": {
         "currency-formatter>accounting": true,
         "currency-formatter>locale-currency": true,
-        "react>object-assign": true
+        "gulp-watch>object-assign": true
       }
     },
     "nock>debug": {
@@ -5132,11 +5049,6 @@
         "string.prototype.matchall>es-abstract>safe-regex-test": true
       }
     },
-    "@material-ui/core>@material-ui/styles>jss>is-in-browser": {
-      "globals": {
-        "document": true
-      }
-    },
     "@ngraveio/bc-ur>assert>is-nan": {
       "packages": {
         "string.prototype.matchall>call-bind": true,
@@ -5240,55 +5152,6 @@
     "@metamask/message-manager>jsonschema": {
       "packages": {
         "browserify>url": true
-      }
-    },
-    "@material-ui/core>@material-ui/styles>jss-plugin-camel-case": {
-      "packages": {
-        "@material-ui/core>@material-ui/styles>jss-plugin-camel-case>hyphenate-style-name": true
-      }
-    },
-    "@material-ui/core>@material-ui/styles>jss-plugin-default-unit": {
-      "globals": {
-        "CSS": true
-      },
-      "packages": {
-        "@material-ui/core>@material-ui/styles>jss": true
-      }
-    },
-    "@material-ui/core>@material-ui/styles>jss-plugin-global": {
-      "packages": {
-        "@babel/runtime": true,
-        "@material-ui/core>@material-ui/styles>jss": true
-      }
-    },
-    "@material-ui/core>@material-ui/styles>jss-plugin-nested": {
-      "packages": {
-        "@babel/runtime": true,
-        "@material-ui/core>@material-ui/styles>jss>tiny-warning": true
-      }
-    },
-    "@material-ui/core>@material-ui/styles>jss-plugin-rule-value-function": {
-      "packages": {
-        "@material-ui/core>@material-ui/styles>jss": true,
-        "@material-ui/core>@material-ui/styles>jss>tiny-warning": true
-      }
-    },
-    "@material-ui/core>@material-ui/styles>jss-plugin-vendor-prefixer": {
-      "packages": {
-        "@material-ui/core>@material-ui/styles>jss-plugin-vendor-prefixer>css-vendor": true,
-        "@material-ui/core>@material-ui/styles>jss": true
-      }
-    },
-    "@material-ui/core>@material-ui/styles>jss": {
-      "globals": {
-        "CSS": true,
-        "document.createElement": true,
-        "document.querySelector": true
-      },
-      "packages": {
-        "@babel/runtime": true,
-        "@material-ui/core>@material-ui/styles>jss>is-in-browser": true,
-        "@material-ui/core>@material-ui/styles>jss>tiny-warning": true
       }
     },
     "ethereumjs-util>ethereum-cryptography>keccak": {
@@ -5635,22 +5498,6 @@
         "@ngraveio/bc-ur>sha.js>to-buffer": true
       }
     },
-    "@material-ui/core>popper.js": {
-      "globals": {
-        "MSInputMethodContext": true,
-        "Node.DOCUMENT_POSITION_FOLLOWING": true,
-        "cancelAnimationFrame": true,
-        "console.warn": true,
-        "devicePixelRatio": true,
-        "document": true,
-        "getComputedStyle": true,
-        "innerHeight": true,
-        "innerWidth": true,
-        "navigator": true,
-        "requestAnimationFrame": true,
-        "setTimeout": true
-      }
-    },
     "react-tippy>popper.js": {
       "globals": {
         "MSInputMethodContext": true,
@@ -5774,11 +5621,6 @@
         "mockttp>express>safe-buffer": true
       }
     },
-    "react": {
-      "packages": {
-        "react>object-assign": true
-      }
-    },
     "react-beautiful-dnd": {
       "globals": {
         "Element.prototype": true,
@@ -5894,11 +5736,13 @@
         "clipboardData": true,
         "console.error": true,
         "document": true,
+        "event": true,
+        "queueMicrotask": true,
         "removeEventListener": true,
+        "reportError": true,
         "setTimeout": true
       },
       "packages": {
-        "react>object-assign": true,
         "react": true,
         "react-dom>scheduler": true
       }
@@ -5960,7 +5804,7 @@
         "prop-types": true,
         "react-markdown>property-information": true,
         "react": true,
-        "react-redux>react-is": true,
+        "react-markdown>react-is": true,
         "react-markdown>remark-parse": true,
         "react-markdown>remark-rehype": true,
         "react-markdown>space-separated-tokens": true,
@@ -6495,12 +6339,15 @@
     "react-dom>scheduler": {
       "globals": {
         "MessageChannel": true,
-        "cancelAnimationFrame": true,
         "clearTimeout": true,
-        "console": true,
+        "console.error": true,
+        "navigator": true,
         "performance": true,
-        "requestAnimationFrame": true,
+        "setImmediate": true,
         "setTimeout": true
+      },
+      "packages": {
+        "core-js-pure": true
       }
     },
     "ethers>@ethersproject/json-wallets>scrypt-js": {
