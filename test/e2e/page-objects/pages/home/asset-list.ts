@@ -917,7 +917,9 @@ class AssetListPage {
     networkName: string,
     tab: string = 'Popular',
   ): Promise<void> {
-    console.log(`Selecting only ${networkName} in the asset list network filter`);
+    console.log(
+      `Selecting only ${networkName} in the asset list network filter`,
+    );
     await this.openNetworksFilter();
     const networkManager = new NetworkManager(this.driver);
     await networkManager.selectTab(tab);
