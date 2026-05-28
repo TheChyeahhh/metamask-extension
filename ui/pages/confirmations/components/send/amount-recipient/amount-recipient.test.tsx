@@ -562,7 +562,9 @@ describe('AmountRecipient', () => {
       const continueButton = getByText(messages.continue.message);
       expect(continueButton).not.toBeDisabled();
 
-      fireEvent.click(continueButton);
+      act(() => {
+        fireEvent.click(continueButton);
+      });
 
       expect(mockHandleSubmit).not.toHaveBeenCalled();
       expect(
@@ -624,8 +626,12 @@ describe('AmountRecipient', () => {
 
       const { getByText, getByTestId } = render();
 
-      fireEvent.click(getByText(messages.continue.message));
-      fireEvent.click(getByTestId('send-alert-modal-acknowledge-button'));
+      act(() => {
+        fireEvent.click(getByText(messages.continue.message));
+      });
+      act(() => {
+        fireEvent.click(getByTestId('send-alert-modal-acknowledge-button'));
+      });
 
       await new Promise(process.nextTick);
 
@@ -701,8 +707,12 @@ describe('AmountRecipient', () => {
 
       const { getByTestId } = render();
 
-      fireEvent.click(getByTestId('recipient-alert-icon'));
-      fireEvent.click(getByTestId('send-alert-modal-acknowledge-button'));
+      act(() => {
+        fireEvent.click(getByTestId('recipient-alert-icon'));
+      });
+      act(() => {
+        fireEvent.click(getByTestId('send-alert-modal-acknowledge-button'));
+      });
 
       await new Promise(process.nextTick);
 

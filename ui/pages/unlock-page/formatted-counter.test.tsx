@@ -15,18 +15,16 @@ describe('FormattedCounter', () => {
     jest.useRealTimers();
   });
 
-  it('should render and start triggering the countdown', async () => {
-    await act(async () => {
-      render(
-        <FormattedCounter startFrom={10} onCountdownEnd={mockUnlockCallback} />,
-      );
+  it('should render and start triggering the countdown', () => {
+    render(
+      <FormattedCounter startFrom={10} onCountdownEnd={mockUnlockCallback} />,
+    );
 
-      // speed up the countdown
+    act(() => {
       jest.advanceTimersByTime(12 * 1000);
-
-      expect(setIntervalSpy).toHaveBeenCalledWith(expect.any(Function), 1000);
-
-      expect(mockUnlockCallback).toHaveBeenCalled();
     });
+
+    expect(setIntervalSpy).toHaveBeenCalledWith(expect.any(Function), 1000);
+    expect(mockUnlockCallback).toHaveBeenCalled();
   });
 });

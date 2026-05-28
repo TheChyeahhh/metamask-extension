@@ -98,35 +98,35 @@ describe('Notifications Activation', () => {
         },
         backgroundConnection: backgroundConnectionMocked,
       });
-
-      await clickElement('account-options-menu-button');
-      await waitForElement('notifications-menu-item');
-      await clickElement('notifications-menu-item');
-
-      await waitFor(() => {
-        expect(
-          within(screen.getByRole('dialog')).getByText('Turn on'),
-        ).toBeInTheDocument();
-      });
-
-      await act(async () => {
-        fireEvent.click(await screen.findByText('Turn on'));
-      });
-
-      await waitFor(() => {
-        const enableMetamaskNotificationsCall =
-          mockedBackgroundConnection.submitRequestToBackground.mock.calls?.find(
-            (call) => call[0] === 'enableMetamaskNotifications',
-          );
-
-        expect(enableMetamaskNotificationsCall?.[0]).toBe(
-          'enableMetamaskNotifications',
-        );
-      });
-
-      await trackNotificationsActivatedMetaMetricsEvent('started', false);
-      await trackNotificationsActivatedMetaMetricsEvent('activated', true);
     });
+
+    await clickElement('account-options-menu-button');
+    await waitForElement('notifications-menu-item');
+    await clickElement('notifications-menu-item');
+
+    await waitFor(() => {
+      expect(
+        within(screen.getByRole('dialog')).getByText('Turn on'),
+      ).toBeInTheDocument();
+    });
+
+    await act(async () => {
+      fireEvent.click(await screen.findByText('Turn on'));
+    });
+
+    await waitFor(() => {
+      const enableMetamaskNotificationsCall =
+        mockedBackgroundConnection.submitRequestToBackground.mock.calls?.find(
+          (call) => call[0] === 'enableMetamaskNotifications',
+        );
+
+      expect(enableMetamaskNotificationsCall?.[0]).toBe(
+        'enableMetamaskNotifications',
+      );
+    });
+
+    await trackNotificationsActivatedMetaMetricsEvent('started', false);
+    await trackNotificationsActivatedMetaMetricsEvent('activated', true);
   });
 
   it('should successfully send correct metrics when notifications modal is dismissed', async () => {
@@ -144,26 +144,26 @@ describe('Notifications Activation', () => {
         },
         backgroundConnection: backgroundConnectionMocked,
       });
-
-      await clickElement('account-options-menu-button');
-      await waitForElement('notifications-menu-item');
-      await clickElement('notifications-menu-item');
-
-      await waitFor(() => {
-        expect(
-          within(screen.getByRole('dialog')).getByText('Turn on'),
-        ).toBeInTheDocument();
-      });
-
-      await act(async () => {
-        fireEvent.click(
-          await within(screen.getByRole('dialog')).findByRole('button', {
-            name: 'Close',
-          }),
-        );
-      });
-
-      await trackNotificationsActivatedMetaMetricsEvent('dismissed', false);
     });
+
+    await clickElement('account-options-menu-button');
+    await waitForElement('notifications-menu-item');
+    await clickElement('notifications-menu-item');
+
+    await waitFor(() => {
+      expect(
+        within(screen.getByRole('dialog')).getByText('Turn on'),
+      ).toBeInTheDocument();
+    });
+
+    await act(async () => {
+      fireEvent.click(
+        await within(screen.getByRole('dialog')).findByRole('button', {
+          name: 'Close',
+        }),
+      );
+    });
+
+    await trackNotificationsActivatedMetaMetricsEvent('dismissed', false);
   });
 });

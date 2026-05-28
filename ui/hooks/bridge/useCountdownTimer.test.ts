@@ -1,4 +1,4 @@
-import { act } from '@testing-library/react';
+import { act } from '@testing-library/react-hooks';
 import { renderHookWithProvider } from '../../../test/lib/render-helpers-navigate';
 import { createBridgeMockStore } from '../../../test/data/bridge/mock-bridge-store';
 import { flushPromises } from '../../../test/lib/timer-helpers';
@@ -28,16 +28,18 @@ describe('useCountdownTimer', () => {
       }),
     );
 
-    await act(async () => {
-      let i = 0;
-      while (i <= 40) {
-        const secondsLeft = Math.min(41, 40 - i + 1);
-        expect(result.current).toStrictEqual(secondsLeft);
-        i += 10;
-        jest.advanceTimersByTime(10000);
+    let i = 0;
+    while (i <= 40) {
+      const secondsLeft = Math.min(41, 40 - i + 1);
+      expect(result.current).toStrictEqual(secondsLeft);
+      i += 10;
+      for (let s = 0; s < 10; s++) {
+        act(() => {
+          jest.advanceTimersByTime(1000);
+        });
         await flushPromises();
       }
-    });
+    }
     expect(result.current).toStrictEqual(0);
   });
 });

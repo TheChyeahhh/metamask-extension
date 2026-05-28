@@ -1,4 +1,5 @@
 import React from 'react';
+import { flushSync } from 'react-dom';
 import { act, fireEvent, screen, waitFor } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 import { renderWithProvider } from '../../../../test/lib/render-helpers-navigate';
@@ -275,8 +276,13 @@ describe('BridgeTransactionSettingsModal', () => {
   const ACTIONS = [
     [
       'paste',
-      async (_input: HTMLElement, value: string) => {
-        await userEvent.paste(value);
+      async (input: HTMLElement, value: string) => {
+        input.focus();
+        flushSync(() => {
+          fireEvent.paste(input, {
+            clipboardData: { getData: () => value },
+          });
+        });
       },
     ],
     [

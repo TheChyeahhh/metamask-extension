@@ -118,15 +118,15 @@ describe('MusdClaimInfo', () => {
     let result: ReturnType<typeof renderWithConfirmContextProvider>;
     await act(async () => {
       result = renderWithConfirmContextProvider(<MusdClaimInfo />, mockStore);
-
-      // Hero heading is rendered
-      expect(result.getByTestId('musd-claim-heading-amount')).toBeDefined();
-
-      // Details section is rendered
-      expect(result.getByTestId('musd-claim-details-section')).toBeDefined();
-
-      // Gas fee section is rendered
-      expect(result.getByTestId('gas-fee-section')).toBeDefined();
     });
+
+    // Hero heading is rendered
+    expect(result!.getByTestId('musd-claim-heading-amount')).toBeDefined();
+
+    // Details section is rendered
+    expect(result!.getByTestId('musd-claim-details-section')).toBeDefined();
+
+    // Gas fee section is rendered
+    expect(result!.getByTestId('gas-fee-section')).toBeDefined();
   });
 });

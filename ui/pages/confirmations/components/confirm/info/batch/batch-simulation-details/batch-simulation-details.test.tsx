@@ -248,7 +248,7 @@ describe('BatchSimulationDetails', () => {
     expect(queryByText(messages.confirmSimulationApprove.message)).toBeNull();
   });
 
-  it('shows edit modal on edit click', () => {
+  it('shows edit modal on edit click', async () => {
     useBatchApproveBalanceChangesMock.mockReturnValue({
       pending: false,
       value: [BALANCE_CHANGE_ERC20_MOCK],
@@ -256,7 +256,9 @@ describe('BatchSimulationDetails', () => {
 
     const { getByTestId, getByText } = render();
 
-    getByTestId('balance-change-edit').click();
+    await act(async () => {
+      getByTestId('balance-change-edit').click();
+    });
 
     expect(getByText(messages.editSpendingCap.message)).toBeInTheDocument();
   });

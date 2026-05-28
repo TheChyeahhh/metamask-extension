@@ -1,7 +1,6 @@
 import { NameType } from '@metamask/name-controller';
-import { fireEvent } from '@testing-library/react';
+import { act, fireEvent } from '@testing-library/react';
 import React from 'react';
-import { act } from 'react-dom/test-utils';
 import { useDispatch, useSelector } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import {

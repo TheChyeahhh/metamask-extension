@@ -3,8 +3,8 @@ import configureMockStore from 'redux-mock-store';
 import { merge } from 'lodash';
 import copyToClipboard from 'copy-to-clipboard';
 import mockState from '../../../test/data/mock-state.json';
+import { act, waitFor } from '@testing-library/react';
 import { renderWithProvider } from '../../../test/lib/render-helpers-navigate';
-import { flushPromises } from '../../../test/lib/timer-helpers';
 import { enLocale as messages } from '../../../test/lib/i18n-helpers';
 import {
   decryptMsg,
@@ -129,9 +129,9 @@ describe('ConfirmDecryptMessage Component', () => {
       store,
     );
 
-    const unlockButton = result.getByTestId('message-lock');
-    unlockButton.click();
-    await flushPromises();
+    await act(async () => {
+      result.getByTestId('message-lock').click();
+    });
     return result;
   };
 
@@ -176,10 +176,12 @@ describe('ConfirmDecryptMessage Component', () => {
     );
 
     const confirmButton = getByText(messages.decrypt.message);
-    confirmButton.click();
-    await flushPromises();
-
-    expect(mockDecryptMsg).toHaveBeenCalled();
+    act(() => {
+      confirmButton.click();
+    });
+    await waitFor(() => {
+      expect(mockDecryptMsg).toHaveBeenCalled();
+    });
     expect(mockTrackEvent).toHaveBeenCalled();
   });
 
@@ -192,10 +194,12 @@ describe('ConfirmDecryptMessage Component', () => {
     );
 
     const confirmButton = getByText(messages.cancel.message);
-    confirmButton.click();
-    await flushPromises();
-
-    expect(mockCancelDecryptMsg).toHaveBeenCalled();
+    act(() => {
+      confirmButton.click();
+    });
+    await waitFor(() => {
+      expect(mockCancelDecryptMsg).toHaveBeenCalled();
+    });
     expect(mockTrackEvent).toHaveBeenCalled();
   });
 

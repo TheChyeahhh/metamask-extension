@@ -1,5 +1,5 @@
 import browser from 'webextension-polyfill';
-import { act } from 'react-dom/test-utils';
+import { act } from '@testing-library/react';
 import { CriticalErrorType } from '../../../shared/constants/state-corruption';
 import { CRITICAL_ERROR_SCREEN_VIEWED } from '../../../shared/constants/start-up-errors';
 import * as errorUtils from '../../../shared/lib/error-utils';

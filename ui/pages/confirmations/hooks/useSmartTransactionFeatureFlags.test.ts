@@ -1,4 +1,4 @@
-import { act } from 'react-dom/test-utils';
+import { act } from '@testing-library/react';
 import { useDispatch } from 'react-redux';
 import { CHAIN_IDS, TransactionMeta } from '@metamask/transaction-controller';
 import { Hex } from '@metamask/utils';

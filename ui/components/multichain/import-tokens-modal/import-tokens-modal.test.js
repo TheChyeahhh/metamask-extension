@@ -415,7 +415,9 @@ describe('ImportTokensModal', () => {
         },
       );
 
-      expect(submit).toBeDisabled();
+      await waitFor(() => {
+        expect(submit).toBeDisabled();
+      });
 
       // The last part of this error message won't be found by getByText because it is wrapped as a link.
       // nftAddressError message is "This token is an NFT. Add on the $1"

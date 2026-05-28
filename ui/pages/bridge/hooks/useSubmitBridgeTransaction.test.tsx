@@ -463,7 +463,9 @@ describe('ui/pages/bridge/hooks/useSubmitBridgeTransaction', () => {
       );
       expect(resetBridgeStoreSpy).not.toHaveBeenCalled();
       expect(mockResetState).not.toHaveBeenCalled();
-      expect(consoleErrorSpy.mock.calls).toMatchInlineSnapshot(`
+      expect(
+        consoleErrorSpy.mock.calls.filter((call) => call[0] instanceof Error),
+      ).toMatchInlineSnapshot(`
               [
                 [
                   [Error: submit failed],

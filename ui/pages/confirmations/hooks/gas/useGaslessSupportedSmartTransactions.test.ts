@@ -1,4 +1,4 @@
-import { act } from 'react-dom/test-utils';
+import { act } from '@testing-library/react';
 import { Hex } from '@metamask/utils';
 import { getIsSmartTransaction } from '../../../../../shared/lib/selectors';
 import { genUnapprovedContractInteractionConfirmation } from '../../../../../test/data/confirmations/contract-interaction';

@@ -1,5 +1,6 @@
 import React from 'react';
 import { fireEvent } from '@testing-library/dom';
+import { act } from '@testing-library/react';
 
 import mockState from '../../../../../../test/data/mock-state.json';
 import {
@@ -118,13 +119,19 @@ describe('Amount', () => {
     });
     const { getByRole, getByTestId, getByText } = render();
 
-    fireEvent.change(getByRole('textbox'), { target: { value: 100 } });
+    act(() => {
+      fireEvent.change(getByRole('textbox'), { target: { value: 100 } });
+    });
     expect(getByText('$ 20.00')).toBeInTheDocument();
-    fireEvent.click(getByTestId('toggle-fiat-mode'));
+    act(() => {
+      fireEvent.click(getByTestId('toggle-fiat-mode'));
+    });
     expect(getByText('$ 20.00 available')).toBeInTheDocument();
     expect(getByRole('textbox')).toHaveValue('20');
     expect(getByText('USD')).toBeInTheDocument();
-    fireEvent.change(getByRole('textbox'), { target: { value: 100 } });
+    act(() => {
+      fireEvent.change(getByRole('textbox'), { target: { value: 100 } });
+    });
     expect(getByText('0 NEU')).toBeInTheDocument();
   });
 
@@ -158,9 +165,13 @@ describe('Amount', () => {
 
     const { getByTestId } = render();
 
-    fireEvent.click(getByTestId('toggle-fiat-mode'));
+    act(() => {
+      fireEvent.click(getByTestId('toggle-fiat-mode'));
+    });
     expect(mockSetAmountInputTypeFiat).toHaveBeenCalled();
-    fireEvent.click(getByTestId('toggle-fiat-mode'));
+    act(() => {
+      fireEvent.click(getByTestId('toggle-fiat-mode'));
+    });
     expect(mockSetAmountInputTypeToken).toHaveBeenCalled();
   });
 
@@ -185,8 +196,12 @@ describe('Amount', () => {
 
     const { getByRole, getByTestId } = render();
 
-    fireEvent.click(getByTestId('toggle-fiat-mode'));
-    fireEvent.change(getByRole('textbox'), { target: { value: 1 } });
+    act(() => {
+      fireEvent.click(getByTestId('toggle-fiat-mode'));
+    });
+    act(() => {
+      fireEvent.change(getByRole('textbox'), { target: { value: 1 } });
+    });
     expect(mockUpdateValue).toHaveBeenCalledWith('20');
   });
 
@@ -222,7 +237,9 @@ describe('Amount', () => {
 
     const { getByRole, getByText } = render();
 
-    fireEvent.click(getByText(messages.max.message));
+    act(() => {
+      fireEvent.click(getByText(messages.max.message));
+    });
     expect(getByRole('textbox')).toHaveValue('5');
     expect(mockUpdateValue).toHaveBeenCalledWith('5', true);
   });

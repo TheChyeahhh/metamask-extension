@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { act } from 'react-dom/test-utils';
+import { act } from '@testing-library/react';
 import { getAllTokens } from '../selectors';
 import { getCurrentChainId } from '../../shared/lib/selectors/networks';
 import { useGetFormattedTokensPerChain } from './useGetFormattedTokensPerChain';

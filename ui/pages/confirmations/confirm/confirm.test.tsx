@@ -205,14 +205,14 @@ describe('Confirm', () => {
       standard: 'ERC20',
     });
 
+    let container;
     await act(async () => {
-      const { container } = await renderWithConfirmContextProvider(
-        <Confirm />,
-        mockStore,
-      );
-
-      expect(container).toMatchSnapshot();
+      const { container: renderContainer } =
+        await renderWithConfirmContextProvider(<Confirm />, mockStore);
+      container = renderContainer;
     });
+
+    expect(container).toMatchSnapshot();
   });
 
   it('should match snapshot for signature - typed sign - V4 - PermitBatch', async () => {
@@ -233,14 +233,14 @@ describe('Confirm', () => {
       standard: 'ERC20',
     });
 
+    let container;
     await act(async () => {
-      const { container } = await renderWithConfirmContextProvider(
-        <Confirm />,
-        mockStore,
-      );
-
-      expect(container).toMatchSnapshot();
+      const { container: renderContainer } =
+        await renderWithConfirmContextProvider(<Confirm />, mockStore);
+      container = renderContainer;
     });
+
+    expect(container).toMatchSnapshot();
   });
 
   it('should render SmartTransactionsBannerAlert for transaction types but not signature types', async () => {
@@ -262,24 +262,28 @@ describe('Confirm', () => {
     const mockStoreTransaction =
       configureMockStore(middleware)(mockStateTransaction);
 
+    let container1;
     await act(async () => {
       const { container } = renderWithConfirmContextProvider(
         <Confirm />,
         mockStoreTransaction,
       );
-      expect(container).toMatchSnapshot();
+      container1 = container;
     });
+    expect(container1).toMatchSnapshot();
 
     // Test with a signature type (reuse existing mock)
     const mockStateTypedSign = getMockTypedSignConfirmState();
     const mockStoreSign = configureMockStore(middleware)(mockStateTypedSign);
 
+    let container2;
     await act(async () => {
       const { container } = renderWithConfirmContextProvider(
         <Confirm />,
         mockStoreSign,
       );
-      expect(container).toMatchSnapshot();
+      container2 = container;
     });
+    expect(container2).toMatchSnapshot();
   });
 });

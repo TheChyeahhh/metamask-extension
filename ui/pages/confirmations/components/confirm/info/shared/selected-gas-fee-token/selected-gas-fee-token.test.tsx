@@ -1,6 +1,6 @@
 import React from 'react';
 import { GasFeeToken } from '@metamask/transaction-controller';
-import { act } from 'react-dom/test-utils';
+import { act } from '@testing-library/react';
 
 import { Hex } from '@metamask/utils';
 import {

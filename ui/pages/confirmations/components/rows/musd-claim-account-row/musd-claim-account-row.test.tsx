@@ -112,8 +112,8 @@ describe('MusdClaimAccountRow', () => {
         <MusdClaimAccountRow />,
         mockStore,
       );
-
-      expect(result.getByTestId('musd-claim-account-address')).toBeDefined();
     });
+
+    expect(result!.getByTestId('musd-claim-account-address')).toBeDefined();
   });
 });

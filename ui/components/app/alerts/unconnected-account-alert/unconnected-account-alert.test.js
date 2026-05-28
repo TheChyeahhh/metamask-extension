@@ -3,7 +3,8 @@ import React from 'react';
 import sinon from 'sinon';
 import thunk from 'redux-thunk';
 
-import { fireEvent } from '@testing-library/react';
+import { fireEvent, waitFor } from '@testing-library/react';
+import { userEvent } from '@testing-library/user-event';
 import configureMockStore from 'redux-mock-store';
 
 import { tick } from '../../../../../test/lib/timer-helpers';
@@ -148,7 +149,7 @@ describe('Unconnected Account Alert', () => {
     sinon.restore();
   });
 
-  it('checks that checkbox is checked', () => {
+  it('checks that checkbox is checked', async () => {
     const store = configureMockStore()(mockState);
 
     const { getByRole } = renderWithProvider(
@@ -158,9 +159,11 @@ describe('Unconnected Account Alert', () => {
 
     const dontShowCheckbox = getByRole('checkbox');
 
-    expect(dontShowCheckbox.checked).toStrictEqual(false);
-    fireEvent.click(dontShowCheckbox);
-    expect(dontShowCheckbox.checked).toStrictEqual(true);
+    expect(dontShowCheckbox).toHaveClass('far');
+    await userEvent.click(dontShowCheckbox);
+    await waitFor(() => {
+      expect(getByRole('checkbox')).toHaveClass('check-box__checked');
+    });
   });
 
   it('clicks dismiss button and calls dismissAlert action', () => {

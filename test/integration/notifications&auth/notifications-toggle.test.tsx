@@ -99,54 +99,54 @@ describe('Notifications Toggle', () => {
         },
         backgroundConnection: backgroundConnectionMocked,
       });
+    });
 
-      await clickElement(selectors.accountOptionsMenuButton);
-      await waitForElement(selectors.notificationsMenuItem);
-      await clickElement(selectors.notificationsMenuItem);
-      await waitForElement(selectors.notificationsSettingsButton);
-      await clickElement(selectors.notificationsSettingsButton);
-      await waitForElement(selectors.notificationsSettingsAllowToggleInput);
-      await clickElement(selectors.notificationsSettingsAllowToggleInput);
+    await clickElement(selectors.accountOptionsMenuButton);
+    await waitForElement(selectors.notificationsMenuItem);
+    await clickElement(selectors.notificationsMenuItem);
+    await waitForElement(selectors.notificationsSettingsButton);
+    await clickElement(selectors.notificationsSettingsButton);
+    await waitForElement(selectors.notificationsSettingsAllowToggleInput);
+    await clickElement(selectors.notificationsSettingsAllowToggleInput);
 
-      await waitFor(() => {
-        const disableNotificationsCall =
-          mockedBackgroundConnection.submitRequestToBackground.mock.calls?.find(
-            (call) => call[0] === 'disableMetamaskNotifications',
-          );
-
-        const fetchAndUpdateMetamaskNotificationsCall =
-          mockedBackgroundConnection.submitRequestToBackground.mock.calls?.find(
-            (call) => call[0] === 'fetchAndUpdateMetamaskNotifications',
-          );
-
-        expect(disableNotificationsCall?.[0]).toBe(
-          'disableMetamaskNotifications',
+    await waitFor(() => {
+      const disableNotificationsCall =
+        mockedBackgroundConnection.submitRequestToBackground.mock.calls?.find(
+          (call) => call[0] === 'disableMetamaskNotifications',
         );
 
-        expect(fetchAndUpdateMetamaskNotificationsCall?.[0]).toBe(
-          'fetchAndUpdateMetamaskNotifications',
+      const fetchAndUpdateMetamaskNotificationsCall =
+        mockedBackgroundConnection.submitRequestToBackground.mock.calls?.find(
+          (call) => call[0] === 'fetchAndUpdateMetamaskNotifications',
         );
-      });
 
-      await verifyMetametricsEvent(
-        MetaMetricsEventName.NotificationsSettingsUpdated,
-        MetaMetricsEventCategory.NotificationSettings,
-        {
-          // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31860
-          // eslint-disable-next-line @typescript-eslint/naming-convention
-          settings_type: 'notifications',
-          // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31860
-          // eslint-disable-next-line @typescript-eslint/naming-convention
-          was_profile_syncing_on: true,
-          // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31860
-          // eslint-disable-next-line @typescript-eslint/naming-convention
-          old_value: true,
-          // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31860
-          // eslint-disable-next-line @typescript-eslint/naming-convention
-          new_value: false,
-        },
+      expect(disableNotificationsCall?.[0]).toBe(
+        'disableMetamaskNotifications',
+      );
+
+      expect(fetchAndUpdateMetamaskNotificationsCall?.[0]).toBe(
+        'fetchAndUpdateMetamaskNotifications',
       );
     });
+
+    await verifyMetametricsEvent(
+      MetaMetricsEventName.NotificationsSettingsUpdated,
+      MetaMetricsEventCategory.NotificationSettings,
+      {
+        // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31860
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        settings_type: 'notifications',
+        // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31860
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        was_profile_syncing_on: true,
+        // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31860
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        old_value: true,
+        // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31860
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        new_value: false,
+      },
+    );
   });
 
   it('enabling product announcements from settings', async () => {
@@ -164,51 +164,51 @@ describe('Notifications Toggle', () => {
         },
         backgroundConnection: backgroundConnectionMocked,
       });
+    });
 
-      await clickElement(selectors.accountOptionsMenuButton);
-      await waitForElement(selectors.notificationsMenuItem);
-      await clickElement(selectors.notificationsMenuItem);
-      await waitForElement(selectors.notificationsSettingsButton);
-      await clickElement(selectors.notificationsSettingsButton);
-      await waitForElement(selectors.productAnnouncementsToggleInput);
-      await clickElement(selectors.productAnnouncementsToggleInput);
+    await clickElement(selectors.accountOptionsMenuButton);
+    await waitForElement(selectors.notificationsMenuItem);
+    await clickElement(selectors.notificationsMenuItem);
+    await waitForElement(selectors.notificationsSettingsButton);
+    await clickElement(selectors.notificationsSettingsButton);
+    await waitForElement(selectors.productAnnouncementsToggleInput);
+    await clickElement(selectors.productAnnouncementsToggleInput);
 
-      await waitFor(() => {
-        const enableFeatureNotifications =
-          mockedBackgroundConnection.submitRequestToBackground.mock.calls?.find(
-            (call) => call[0] === 'setFeatureAnnouncementsEnabled',
-          );
-
-        const fetchAndUpdateMetamaskNotificationsCall =
-          mockedBackgroundConnection.submitRequestToBackground.mock.calls?.find(
-            (call) => call[0] === 'fetchAndUpdateMetamaskNotifications',
-          );
-
-        expect(enableFeatureNotifications?.[0]).toBe(
-          'setFeatureAnnouncementsEnabled',
+    await waitFor(() => {
+      const enableFeatureNotifications =
+        mockedBackgroundConnection.submitRequestToBackground.mock.calls?.find(
+          (call) => call[0] === 'setFeatureAnnouncementsEnabled',
         );
-        expect(enableFeatureNotifications?.[1]).toEqual([true]);
 
-        expect(fetchAndUpdateMetamaskNotificationsCall?.[0]).toBe(
-          'fetchAndUpdateMetamaskNotifications',
+      const fetchAndUpdateMetamaskNotificationsCall =
+        mockedBackgroundConnection.submitRequestToBackground.mock.calls?.find(
+          (call) => call[0] === 'fetchAndUpdateMetamaskNotifications',
         );
-      });
 
-      await verifyMetametricsEvent(
-        MetaMetricsEventName.NotificationsSettingsUpdated,
-        MetaMetricsEventCategory.NotificationSettings,
-        {
-          // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31860
-          // eslint-disable-next-line @typescript-eslint/naming-convention
-          settings_type: 'product_announcements',
-          // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31860
-          // eslint-disable-next-line @typescript-eslint/naming-convention
-          old_value: false,
-          // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31860
-          // eslint-disable-next-line @typescript-eslint/naming-convention
-          new_value: true,
-        },
+      expect(enableFeatureNotifications?.[0]).toBe(
+        'setFeatureAnnouncementsEnabled',
+      );
+      expect(enableFeatureNotifications?.[1]).toEqual([true]);
+
+      expect(fetchAndUpdateMetamaskNotificationsCall?.[0]).toBe(
+        'fetchAndUpdateMetamaskNotifications',
       );
     });
+
+    await verifyMetametricsEvent(
+      MetaMetricsEventName.NotificationsSettingsUpdated,
+      MetaMetricsEventCategory.NotificationSettings,
+      {
+        // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31860
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        settings_type: 'product_announcements',
+        // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31860
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        old_value: false,
+        // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31860
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        new_value: true,
+      },
+    );
   });
 });
