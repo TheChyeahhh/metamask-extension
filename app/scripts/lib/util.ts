@@ -49,6 +49,7 @@ import {
 // and keep the sentry bundle lightweight
 export { getInstallType, initInstallType } from './install-type';
 export { getEnvironmentType } from '../../../shared/lib/environment-type';
+export { formatValue, isValidAmount } from '../../../shared/lib/format-value';
 
 /**
  * Minimal type for User-Agent Client Hints API (NavigatorUAData).
@@ -586,24 +587,6 @@ export function formatTxMetaForRpcResult(
   }
 
   return formattedTxMeta;
-}
-
-export const isValidAmount = (amount: number | null | undefined): boolean =>
-  amount !== null && amount !== undefined && !Number.isNaN(amount);
-
-export function formatValue(
-  value: number | null | undefined,
-  includeParentheses: boolean,
-): string {
-  if (!isValidAmount(value)) {
-    return '';
-  }
-
-  const numericValue = value as number;
-  const sign = numericValue >= 0 ? '+' : '';
-  const formattedNumber = `${sign}${numericValue.toFixed(2)}%`;
-
-  return includeParentheses ? `(${formattedNumber})` : formattedNumber;
 }
 
 type MethodData = {
