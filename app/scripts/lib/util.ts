@@ -6,9 +6,6 @@ import {
   TransactionMeta,
 } from '@metamask/transaction-controller';
 import type { Provider } from '@metamask/network-controller';
-import { CaipAssetType, parseCaipAssetType } from '@metamask/utils';
-import { MultichainAssetsRatesControllerState } from '@metamask/assets-controllers';
-import { AssetConversion, FungibleAssetMarketData } from '@metamask/snaps-sdk';
 import {
   DEVICE_TYPE,
   OS,
@@ -49,6 +46,7 @@ import {
 // and keep the sentry bundle lightweight
 export { getInstallType, initInstallType } from './install-type';
 export { getEnvironmentType } from '../../../shared/lib/environment-type';
+export { getConversionRatesForNativeAsset } from '../../../shared/lib/asset-conversion-rates';
 
 /**
  * Minimal type for User-Agent Client Hints API (NavigatorUAData).
@@ -653,38 +651,6 @@ export const getMethodDataName = async (
  */
 export function getBooleanFlag(value: string | boolean | undefined): boolean {
   return value === true || value === 'true';
-}
-
-type AssetsRatesState = {
-  metamask: MultichainAssetsRatesControllerState;
-};
-
-export function getConversionRatesForNativeAsset({
-  conversionRates,
-  chainId,
-}: {
-  conversionRates: AssetsRatesState['metamask']['conversionRates'];
-  chainId: string;
-}): (AssetConversion & { marketData?: FungibleAssetMarketData }) | null {
-  // Return early if conversionRates is falsy
-  if (!conversionRates) {
-    return null;
-  }
-
-  let conversionRateResult = null;
-
-  Object.entries(conversionRates).forEach(
-    ([caip19Identifier, conversionRate]) => {
-      const { assetNamespace, chainId: caipChainId } = parseCaipAssetType(
-        caip19Identifier as CaipAssetType,
-      );
-      if (assetNamespace === 'slip44' && caipChainId === chainId) {
-        conversionRateResult = conversionRate;
-      }
-    },
-  );
-
-  return conversionRateResult;
 }
 
 // Cache for known domains
