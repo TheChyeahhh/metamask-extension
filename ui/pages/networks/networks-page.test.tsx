@@ -1,5 +1,5 @@
 import React from 'react';
-import { screen } from '@testing-library/react';
+import { screen, waitFor } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 import { RpcEndpointType } from '@metamask/network-controller';
 import { renderWithProvider } from '../../../test/lib/render-helpers-navigate';
@@ -85,6 +85,10 @@ describe('NetworksPage', () => {
     );
     await userEvent.click(screen.getByTestId('page-container-footer-next'));
 
-    expect(screen.getByText(messages.editNetwork.message)).toBeInTheDocument();
+    await waitFor(() => {
+      expect(
+        screen.getByText(messages.editNetwork.message),
+      ).toBeInTheDocument();
+    });
   });
 });

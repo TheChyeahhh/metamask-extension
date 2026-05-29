@@ -37,7 +37,6 @@
       "Reselect: Identity function warnings": 3,
       "Reselect: Input stability warnings": 1,
       "error: Error: AggregateError": 1,
-      "error: Warning: Disclosure: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
       "warn: ⚠️ React Router Future Flag": 1
@@ -56,7 +55,6 @@
       "error: Error: AggregateError": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
-      "error: Warning: Preloader: Support for defaultProps": 1,
       "warn: ⚠️ React Router Future Flag": 1
     },
     "test/integration/confirmations/transactions/contract-deployment.test.tsx": {
@@ -65,17 +63,14 @@
       "error: Error: AggregateError": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
-      "error: Warning: Preloader: Support for defaultProps": 1,
       "warn: ⚠️ React Router Future Flag": 1
     },
     "test/integration/confirmations/transactions/contract-interaction.test.tsx": {
       "Reselect: Identity function warnings": 3,
       "Reselect: Input stability warnings": 1,
       "error: Error: AggregateError": 1,
-      "error: Warning: Disclosure: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
-      "error: Warning: Preloader: Support for defaultProps": 1,
       "warn: ⚠️ React Router Future Flag": 1
     },
     "test/integration/confirmations/transactions/dapp-swap-comparison-banner.test.tsx": {
@@ -92,7 +87,6 @@
       "error: Error: AggregateError": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
-      "error: Warning: Preloader: Support for defaultProps": 1,
       "warn: ⚠️ React Router Future Flag": 1
     },
     "test/integration/confirmations/transactions/erc721-approve.test.tsx": {
@@ -101,7 +95,6 @@
       "error: Error: AggregateError": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
-      "error: Warning: Preloader: Support for defaultProps": 1,
       "warn: ⚠️ React Router Future Flag": 1
     },
     "test/integration/confirmations/transactions/increase-allowance.test.tsx": {
@@ -110,7 +103,6 @@
       "error: Error: AggregateError": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
-      "error: Warning: Preloader: Support for defaultProps": 1,
       "warn: ⚠️ React Router Future Flag": 1
     },
     "test/integration/confirmations/transactions/set-approval-for-all-revoke.test.tsx": {
@@ -127,7 +119,6 @@
       "error: Error: AggregateError": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
-      "error: Warning: Preloader: Support for defaultProps": 1,
       "warn: ⚠️ React Router Future Flag": 1
     },
     "test/integration/defi/defi-positions.test.tsx": {
@@ -137,6 +128,7 @@
       "error: Warning: Home uses the legacy": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
+      "error: Warning: The current testing environment": 3,
       "warn: ⚠️ React Router Future Flag": 1
     },
     "test/integration/nfts/nfts.test.tsx": {
@@ -153,7 +145,7 @@
       "error: Warning: Home uses the legacy": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
-      "error: Warning: The current testing environment": 3,
+      "error: Warning: The current testing environment": 4,
       "warn: ⚠️ React Router Future Flag": 1
     },
     "test/integration/notifications&auth/notifications-list.test.tsx": {
@@ -170,7 +162,6 @@
       "error: Warning: Home uses the legacy": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
-      "error: Warning: Preloader: Support for defaultProps": 1,
       "error: Warning: The current testing environment": 2,
       "warn: ⚠️ React Router Future Flag": 1
     },

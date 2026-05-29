@@ -21,9 +21,7 @@ export const I18nProvider = ({ children } = {}) => {
       getMessage(currentLocale, en, key, ...args);
   }, [currentLocale, current, en]);
 
-  return (
-    <I18nContext.Provider value={t}>{children}</I18nContext.Provider>
-  );
+  return <I18nContext.Provider value={t}>{children}</I18nContext.Provider>;
 };
 
 I18nProvider.propTypes = {

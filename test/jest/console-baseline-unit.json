@@ -209,7 +209,6 @@
       "error: Warning: `ReactDOMTestUtils.act` is deprecated in": 1
     },
     "ui/components/app/alert-system/general-alert/general-alert.test.tsx": {
-      "error: Warning: Disclosure: Support for defaultProps": 1,
       "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1
@@ -221,7 +220,6 @@
     },
     "ui/components/app/alerts/unconnected-account-alert/unconnected-account-alert.test.js": {
       "React: Act warnings (component updates not wrapped)": 1,
-      "error: Warning: CheckBox: Support for defaultProps": 1,
       "error: Warning: ConnectedAccountsList uses the legacy": 1,
       "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
@@ -392,8 +390,7 @@
     "ui/components/app/create-new-vault/create-new-vault.test.js": {
       "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
-      "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
-      "error: Warning: TextField: Support for defaultProps": 1
+      "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1
     },
     "ui/components/app/currency-input/currency-input.test.js": {
       "error: Warning: I18nProvider: Support for defaultProps": 1,
@@ -513,8 +510,7 @@
       "React: PropTypes validation failures": 1,
       "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
-      "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
-      "error: Warning: TextField: Support for defaultProps": 1
+      "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1
     },
     "ui/components/app/modals/hide-token-confirmation-modal/hide-token-confirmation-modal.test.js": {
       "error: Warning: HideTokenConfirmationModal uses the legacy": 1,
@@ -990,8 +986,7 @@
     },
     "ui/components/app/snaps/snap-version/snap-external-pill.test.js": {
       "error: Warning: I18nProvider: Support for defaultProps": 1,
-      "error: Warning: LegacyI18nProvider uses the legacy": 1,
-      "error: Warning: Preloader: Support for defaultProps": 1
+      "error: Warning: LegacyI18nProvider uses the legacy": 1
     },
     "ui/components/app/srp-details-modal/srp-details-modal.test.tsx": {
       "error: Warning: I18nProvider: Support for defaultProps": 1,
@@ -1004,10 +999,9 @@
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1
     },
     "ui/components/app/srp-input/srp-input.test.js": {
-      "React: Act warnings (component updates not wrapped)": 51694,
+      "React: Act warnings (component updates not wrapped)": 51812,
       "error: Warning: I18nProvider: Support for defaultProps": 1,
-      "error: Warning: LegacyI18nProvider uses the legacy": 1,
-      "error: Warning: TextField: Support for defaultProps": 1
+      "error: Warning: LegacyI18nProvider uses the legacy": 1
     },
     "ui/components/app/srp-quiz-modal/SRPQuiz/SRPQuiz.test.js": {
       "error: Warning: I18nProvider: Support for defaultProps": 1,
@@ -1252,8 +1246,7 @@
       "React: componentWill* lifecycle deprecations": 1,
       "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
-      "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
-      "error: Warning: Preloader: Support for defaultProps": 1
+      "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1
     },
     "ui/components/multichain-accounts/smart-contract-account-toggle/smart-contract-account-toggle.test.tsx": {
       "React: Act warnings (component updates not wrapped)": 6,
@@ -1269,8 +1262,7 @@
       "error: Warning: EditableLabel uses the legacy": 1,
       "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
-      "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
-      "error: Warning: Preloader: Support for defaultProps": 1
+      "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1
     },
     "ui/components/multichain/account-details/account-details.test.js": {
       "React: Act warnings (component updates not wrapped)": 8,
@@ -1449,8 +1441,7 @@
       "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
-      "error: Warning: React does not recognize": 1,
-      "error: Warning: TokenBalance: Support for defaultProps": 1
+      "error: Warning: React does not recognize": 1
     },
     "ui/components/multichain/menu-items/account-details-menu-item.test.js": {
       "error: Warning: I18nProvider: Support for defaultProps": 1,
@@ -1687,12 +1678,6 @@
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1
     },
-    "ui/components/ui/delineator/delineator.test.tsx": {
-      "error: Warning: Preloader: Support for defaultProps": 1
-    },
-    "ui/components/ui/disclosure/disclosure.test.js": {
-      "error: Warning: Disclosure: Support for defaultProps": 1
-    },
     "ui/components/ui/form-combo-field/form-combo-field.test.tsx": {
       "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
@@ -1707,7 +1692,6 @@
       "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
-      "error: Warning: Preloader: Support for defaultProps": 1,
       "error: Warning: Send: Support for defaultProps": 1
     },
     "ui/components/ui/metafox-logo/metafox-logo.component.test.js": {
@@ -1764,8 +1748,7 @@
     "ui/components/ui/update-nickname-popover/update-nickname-popover.test.js": {
       "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
-      "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
-      "error: Warning: TextField: Support for defaultProps": 1
+      "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1
     },
     "ui/contexts/hardware-wallets/HardwareWalletContext.test.tsx": {
       "Deprecation warnings": 1,
@@ -2979,8 +2962,7 @@
       "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
-      "error: Warning: PageContainerFooter uses the legacy": 1,
-      "error: Warning: TokenBalance: Support for defaultProps": 1
+      "error: Warning: PageContainerFooter uses the legacy": 1
     },
     "ui/pages/confirm-decrypt-message/confirm-decrypt-message.component.test.js": {
       "React: Act warnings (component updates not wrapped)": 1,
@@ -3087,8 +3069,7 @@
     "ui/pages/confirmations/components/confirm/blockaid-loading-indicator/blockaid-loading-indicator.test.tsx": {
       "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
-      "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
-      "error: Warning: Preloader: Support for defaultProps": 1
+      "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1
     },
     "ui/pages/confirmations/components/confirm/dapp-swap-comparison-banner/dapp-swap-comparison-banner.test.tsx": {
       "error: Warning: I18nProvider: Support for defaultProps": 1,
@@ -3218,8 +3199,7 @@
       "MetaMask: Background connection not initialized": 14,
       "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
-      "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
-      "error: Warning: Preloader: Support for defaultProps": 1
+      "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1
     },
     "ui/pages/confirmations/components/confirm/info/batch/nested-transaction-data/nested-transaction-data.test.tsx": {
       "error: Warning: I18nProvider: Support for defaultProps": 1,
@@ -3369,8 +3349,7 @@
       "Test errors: Uncaught Errors": 4,
       "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
-      "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
-      "error: Warning: Preloader: Support for defaultProps": 1
+      "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1
     },
     "ui/pages/confirmations/components/confirm/info/native-transfer/native-transfer.test.tsx": {
       "MetaMask: Background connection not initialized": 38,
@@ -3426,8 +3405,7 @@
       "Reselect: Identity function warnings": 1,
       "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
-      "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
-      "error: Warning: Preloader: Support for defaultProps": 1
+      "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1
     },
     "ui/pages/confirmations/components/confirm/info/shared/batched-approval-function/batched-approval-function.test.tsx": {
       "React: Act warnings (component updates not wrapped)": 2,
@@ -3438,8 +3416,7 @@
     "ui/pages/confirmations/components/confirm/info/shared/confirm-loader/confirm-loader.test.tsx": {
       "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
-      "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
-      "error: Warning: Preloader: Support for defaultProps": 1
+      "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1
     },
     "ui/pages/confirmations/components/confirm/info/shared/edit-gas-fees-row/edit-gas-fees-row.test.tsx": {
       "MetaMask: Background connection not initialized": 132,
@@ -3510,8 +3487,7 @@
       "React: Act warnings (component updates not wrapped)": 3,
       "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
-      "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
-      "error: Warning: Preloader: Support for defaultProps": 1
+      "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1
     },
     "ui/pages/confirmations/components/confirm/info/shared/selected-gas-fee-token/selected-gas-fee-token.test.tsx": {
       "MetaMask: Background connection not initialized": 84,
@@ -3535,8 +3511,7 @@
       "React: Missing key props in lists": 1,
       "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
-      "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
-      "error: Warning: Preloader: Support for defaultProps": 1
+      "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1
     },
     "ui/pages/confirmations/components/confirm/info/shared/transaction-details/transaction-details.test.tsx": {
       "Reselect: Input stability warnings": 1,
@@ -3876,7 +3851,6 @@
     "ui/pages/confirmations/components/send/amount-recipient/amount-recipient.test.tsx": {
       "MetaMask: Background connection not initialized": 1,
       "React: Act warnings (component updates not wrapped)": 11,
-      "error: Warning: Disclosure: Support for defaultProps": 1,
       "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1
@@ -3918,7 +3892,6 @@
     },
     "ui/pages/confirmations/components/send/recipient/recipient.test.tsx": {
       "React: Act warnings (component updates not wrapped)": 1,
-      "error: Warning: Disclosure: Support for defaultProps": 1,
       "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1
@@ -5303,8 +5276,7 @@
       "React: Act warnings (component updates not wrapped)": 2,
       "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
-      "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
-      "error: Warning: Preloader: Support for defaultProps": 1
+      "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1
     },
     "ui/pages/multichain-accounts/wallet-details-page/wallet-details-page.test.tsx": {
       "error: Warning: I18nProvider: Support for defaultProps": 1,
