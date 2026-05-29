@@ -28,7 +28,7 @@ import { QuoteResponse } from '@metamask/bridge-controller';
 import { ProfileMetricsControllerSkipInitialDelayAction } from '@metamask/profile-metrics-controller';
 
 import { MINUTE } from '../../../shared/constants/time';
-import { AUTO_LOCK_TIMEOUT_ALARM } from '../../../shared/constants/alarms';
+import { Alarm } from '../../../shared/constants/alarms';
 import { isManifestV3 } from '../../../shared/lib/mv3.utils';
 import {
   ENVIRONMENT_TYPE_BACKGROUND,
@@ -799,9 +799,9 @@ export class AppStateController extends BaseController<
     if (isManifestV3) {
       this.#extension.alarms.onAlarm.addListener(
         (alarmInfo: { name: string }) => {
-          if (alarmInfo.name === AUTO_LOCK_TIMEOUT_ALARM) {
+          if (alarmInfo.name === Alarm.AutoLockTimeout) {
             this.#onInactiveTimeout();
-            this.#extension.alarms.clear(AUTO_LOCK_TIMEOUT_ALARM);
+            this.#extension.alarms.clear(Alarm.AutoLockTimeout);
           }
         },
       );
@@ -1173,7 +1173,7 @@ export class AppStateController extends BaseController<
     if (this.#timer) {
       clearTimeout(this.#timer);
     } else if (isManifestV3) {
-      this.#extension.alarms.clear(AUTO_LOCK_TIMEOUT_ALARM);
+      this.#extension.alarms.clear(Alarm.AutoLockTimeout);
     }
 
     if (!timeoutMinutes) {
@@ -1190,7 +1190,7 @@ export class AppStateController extends BaseController<
     const timeoutToSet = Number(timeoutMinutes);
 
     if (isManifestV3) {
-      this.#extension.alarms.create(AUTO_LOCK_TIMEOUT_ALARM, {
+      this.#extension.alarms.create(Alarm.AutoLockTimeout, {
         delayInMinutes: timeoutToSet,
         periodInMinutes: timeoutToSet,
       });
