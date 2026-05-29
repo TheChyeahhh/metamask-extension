@@ -18,4 +18,6 @@ export const QR_CONFIG = {
   REFRESH_RATE: 200,
   /** Pixel size of the rendered QR code SVG. */
   CODE_SIZE: 225,
+  /** Encoding used for the CBOR payload. */
+  CBOR_ENCODING: 'hex',
 } as const;

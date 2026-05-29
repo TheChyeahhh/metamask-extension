@@ -2,13 +2,14 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
 import { UR, UREncoder } from '@ngraveio/bc-ur';
 import {
-  AlignItems,
-  Display,
-  FlexDirection,
+  Box,
+  BoxAlignItems,
+  BoxFlexDirection,
+  Text,
   TextAlign,
-} from '../../../../../helpers/constants/design-system';
-import { PageContainerFooter } from '../../../../ui/page-container';
-import { Text, Box } from '../../../../component-library';
+  TextVariant,
+} from '@metamask/design-system-react';
+import PageContainerFooter from '../../../../ui/page-container/page-container-footer/page-container-footer.component';
 import { useI18nContext } from '../../../../../hooks/useI18nContext';
 import { QR_CONFIG, type PlayerProps } from './player.types';
 
@@ -37,7 +38,7 @@ const Player = ({
   const urEncoder = useMemo(
     () =>
       new UREncoder(
-        new UR(Buffer.from(cbor, 'hex'), type),
+        new UR(Buffer.from(cbor, QR_CONFIG.CBOR_ENCODING), type),
         QR_CONFIG.FRAGMENT_SIZE,
       ),
     [cbor, type],
@@ -61,23 +62,17 @@ const Player = ({
   return (
     <>
       <Box>
-        <Text align={TextAlign.Center}>
+        <Text variant={TextVariant.BodyMd} textAlign={TextAlign.Center}>
           {t('QRHardwareSignRequestSubtitle')}
         </Text>
       </Box>
       <Box
         paddingTop={4}
         paddingBottom={4}
-        display={Display.Flex}
-        alignItems={AlignItems.center}
-        flexDirection={FlexDirection.Column}
+        alignItems={BoxAlignItems.Center}
+        flexDirection={BoxFlexDirection.Column}
       >
-        <div
-          style={{
-            padding: 20,
-            backgroundColor: 'var(--qr-code-white-background)',
-          }}
-        >
+        <div className="p-5 bg-[var(--qr-code-white-background)]">
           <QRCodeSVG
             value={currentQRCode.toUpperCase()}
             size={QR_CONFIG.CODE_SIZE}
@@ -85,7 +80,7 @@ const Player = ({
         </div>
       </Box>
       <Box paddingBottom={4} paddingLeft={4} paddingRight={4}>
-        <Text align={TextAlign.Center}>
+        <Text variant={TextVariant.BodyMd} textAlign={TextAlign.Center}>
           {t('QRHardwareSignRequestDescription')}
         </Text>
       </Box>

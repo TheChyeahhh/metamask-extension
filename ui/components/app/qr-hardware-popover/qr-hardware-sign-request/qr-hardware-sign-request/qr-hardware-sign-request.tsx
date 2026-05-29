@@ -4,15 +4,11 @@ import type { SerializedUR } from '@metamask/eth-qr-keyring';
 import { completeQrCodeScan } from '../../../../../store/actions';
 import Player from '../player';
 import Reader from '../reader';
-import type { QRHardwareSignRequestProps } from './qr-hardware-sign-request.types';
-
-/**
- * Flow status for the QR hardware signing request.
- *
- * - "play" - the animated QR code is shown for the hardware wallet to scan.
- * - "read" - the camera scanner is active, reading the signed response.
- */
-type FlowStatus = 'play' | 'read';
+import {
+  FlowStatus,
+  type FlowStatusValue,
+  type QRHardwareSignRequestProps,
+} from './qr-hardware-sign-request.types';
 
 /**
  * Orchestrates the two-phase QR signing flow.
@@ -33,22 +29,22 @@ const QRHardwareSignRequest = ({
   setErrorTitle,
 }: QRHardwareSignRequestProps) => {
   const dispatch = useDispatch();
-  const [status, setStatus] = useState<FlowStatus>('play');
+  const [status, setStatus] = useState<FlowStatusValue>(FlowStatus.Play);
 
   useEffect(() => {
-    setStatus('play');
+    setStatus(FlowStatus.Play);
   }, [request.requestId]);
 
-  const toRead = useCallback(() => setStatus('read'), []);
+  const toRead = useCallback(() => setStatus(FlowStatus.Read), []);
 
   const handleSuccess = useCallback(
-    (response: SerializedUR) => {
-      return dispatch(completeQrCodeScan(response));
+    async (response: SerializedUR) => {
+      await dispatch(completeQrCodeScan(response));
     },
     [dispatch],
   );
 
-  if (status === 'play') {
+  if (status === FlowStatus.Play) {
     return (
       <Player
         type={request.payload.type}

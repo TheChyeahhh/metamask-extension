@@ -4,6 +4,7 @@ import * as uuid from 'uuid';
 import type { UR } from '@ngraveio/bc-ur';
 import BaseReader from '../../base-reader';
 import { useI18nContext } from '../../../../../hooks/useI18nContext';
+import { QR_CONFIG } from '../player/player.types';
 import type { ReaderProps } from './reader.types';
 
 /**
@@ -40,7 +41,7 @@ const Reader = ({
 
       return await submitQRHardwareSignature({
         type: ur.type,
-        cbor: ur.cbor.toString('hex'),
+        cbor: ur.cbor.toString(QR_CONFIG.CBOR_ENCODING),
       });
     },
     [submitQRHardwareSignature, requestId, setErrorTitle, t],
