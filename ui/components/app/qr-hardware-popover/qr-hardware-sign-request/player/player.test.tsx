@@ -9,11 +9,7 @@ import Player from './player';
 
 jest.mock('qrcode.react', () => ({
   QRCodeSVG: ({ value, size }: { value: string; size: number }) => (
-    <div
-      data-testid="qr-code-svg"
-      data-value={value}
-      data-size={size}
-    />
+    <div data-testid="qr-code-svg" data-value={value} data-size={size} />
   ),
 }));
 
@@ -77,9 +73,7 @@ describe('Player', () => {
     jest.useRealTimers();
     renderWithProvider(<Player {...defaultProps} />);
 
-    await userEvent.click(
-      screen.getByText(tEn('QRHardwareSignRequestCancel')),
-    );
+    await userEvent.click(screen.getByText(tEn('QRHardwareSignRequestCancel')));
 
     expect(defaultProps.cancelQRHardwareSignRequest).toHaveBeenCalledTimes(1);
   });

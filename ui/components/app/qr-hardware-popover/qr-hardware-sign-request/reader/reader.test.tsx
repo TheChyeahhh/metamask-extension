@@ -143,9 +143,7 @@ describe('Reader', () => {
 
       await screen.getByTestId('base-reader-cancel').click();
 
-      expect(
-        defaultProps.cancelQRHardwareSignRequest,
-      ).toHaveBeenCalledTimes(1);
+      expect(defaultProps.cancelQRHardwareSignRequest).toHaveBeenCalledTimes(1);
     });
   });
 
