@@ -72,7 +72,9 @@ describe('Restore vault Component', () => {
 
     const confirmSrpButton = queryByTestId('import-srp-confirm');
 
-    expect(confirmSrpButton).not.toBeDisabled();
+    await waitFor(() => {
+      expect(confirmSrpButton).not.toBeDisabled();
+    });
 
     fireEvent.click(confirmSrpButton as HTMLElement);
 

@@ -1,9 +1,9 @@
 import React from 'react';
+import { act, waitFor } from '@testing-library/react';
 import configureMockStore from 'redux-mock-store';
 import { merge } from 'lodash';
 import copyToClipboard from 'copy-to-clipboard';
 import mockState from '../../../test/data/mock-state.json';
-import { act, waitFor } from '@testing-library/react';
 import { renderWithProvider } from '../../../test/lib/render-helpers-navigate';
 import { enLocale as messages } from '../../../test/lib/i18n-helpers';
 import {

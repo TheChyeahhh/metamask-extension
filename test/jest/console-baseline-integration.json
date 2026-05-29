@@ -128,7 +128,7 @@
       "error: Warning: Home uses the legacy": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
-      "error: Warning: The current testing environment": 3,
+      "error: Warning: The current testing environment": 1,
       "warn: ⚠️ React Router Future Flag": 1
     },
     "test/integration/nfts/nfts.test.tsx": {
@@ -145,7 +145,7 @@
       "error: Warning: Home uses the legacy": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
-      "error: Warning: The current testing environment": 4,
+      "error: Warning: The current testing environment": 3,
       "warn: ⚠️ React Router Future Flag": 1
     },
     "test/integration/notifications&auth/notifications-list.test.tsx": {

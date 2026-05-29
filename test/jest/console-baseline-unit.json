@@ -999,7 +999,7 @@
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1
     },
     "ui/components/app/srp-input/srp-input.test.js": {
-      "React: Act warnings (component updates not wrapped)": 51812,
+      "React: Act warnings (component updates not wrapped)": 51702,
       "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1
     },
