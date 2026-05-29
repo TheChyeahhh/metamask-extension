@@ -1,10 +1,9 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { providerErrors, serializeError } from '@metamask/rpc-errors';
 import { QrScanRequestType } from '@metamask/eth-qr-keyring';
 import { getActiveQrCodeScanRequest } from '../../../selectors';
 import Popover from '../../ui/popover';
-import { useI18nContext } from '../../../hooks/useI18nContext';
 import {
   cancelTx,
   rejectPendingApproval,
@@ -15,12 +14,21 @@ import {
   ENVIRONMENT_TYPE_POPUP,
   ENVIRONMENT_TYPE_SIDEPANEL,
 } from '../../../../shared/constants/app';
+import type { ConfirmTransactionSlice } from './qr-hardware-popover.types';
 import QRHardwareWalletImporter from './qr-hardware-wallet-importer';
 import QRHardwareSignRequest from './qr-hardware-sign-request';
 
+/**
+ * Top-level popover that hosts QR-based hardware wallet flows.
+ *
+ * Renders one of two child components depending on the active scan request:
+ * - PAIR: QRHardwareWalletImporter (camera scanner for wallet import)
+ * - SIGN: QRHardwareSignRequest (animated QR display then camera scanner)
+ *
+ * In restricted environments (popup, side panel), PAIR requests are suppressed
+ * because they are always handled in a fullscreen tab.
+ */
 const QRHardwarePopover = () => {
-  const t = useI18nContext();
-
   const activeScanRequest = useSelector(getActiveQrCodeScanRequest);
 
   const environmentType = getEnvironmentType();
@@ -29,15 +37,23 @@ const QRHardwarePopover = () => {
     environmentType === ENVIRONMENT_TYPE_SIDEPANEL;
   const [errorTitle, setErrorTitle] = useState('');
 
-  const { txData } = useSelector((state) => {
-    return state.confirmTransaction;
-  });
-  // the confirmTransaction's life cycle is not consistent with QR hardware wallet;
-  // the confirmTransaction will change after the previous tx is confirmed or cancel,
-  // we want to block the changing by sign request id;
-  const _txData = useMemo(() => {
-    return txData;
-  }, [activeScanRequest?.requestId]);
+  const { txData } = useSelector(
+    (state: { confirmTransaction: ConfirmTransactionSlice }) => {
+      return state.confirmTransaction;
+    },
+  );
+
+  // The confirmTransaction lifecycle is not consistent with QR hardware wallet;
+  // confirmTransaction changes after the previous tx is confirmed or cancelled.
+  // Snapshot txData when requestId changes so the cancel callback always
+  // references the correct transaction for the active signing flow.
+  const txDataRef = useRef(txData);
+  const prevRequestIdRef = useRef(activeScanRequest?.requestId);
+
+  if (prevRequestIdRef.current !== activeScanRequest?.requestId) {
+    prevRequestIdRef.current = activeScanRequest?.requestId;
+    txDataRef.current = txData;
+  }
 
   const dispatch = useDispatch();
   const walletImporterCancel = useCallback(
@@ -48,26 +64,17 @@ const QRHardwarePopover = () => {
   const signRequestCancel = useCallback(() => {
     dispatch(
       rejectPendingApproval(
-        _txData.id,
+        txDataRef.current.id,
         serializeError(providerErrors.userRejectedRequest()),
       ),
     );
-    dispatch(cancelTx(_txData));
+    dispatch(cancelTx(txDataRef.current));
     dispatch(cancelQrCodeScan());
-  }, [dispatch, _txData]);
+  }, [dispatch]);
 
-  const title = useMemo(() => {
-    if (activeScanRequest === QrScanRequestType.SIGN) {
-      return t('QRHardwareSignRequestTitle');
-    }
-    if (activeScanRequest === QrScanRequestType.PAIR) {
-      return t('QRHardwareWalletImporterTitle');
-    }
-    if (errorTitle !== '') {
-      return errorTitle;
-    }
-    return '';
-  }, [activeScanRequest, t, errorTitle]);
+  // The popover shows no title by default. Child components set an
+  // error-specific heading via setErrorTitle when something goes wrong.
+  const title = errorTitle;
 
   // PAIR requests are always handled in a fullscreen tab opened by the
   // add-wallet-modal. Rendering in sidepanel/popup would cause BaseReader's
