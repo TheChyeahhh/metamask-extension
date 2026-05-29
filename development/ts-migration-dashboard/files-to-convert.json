@@ -525,8 +525,6 @@
   "ui/components/app/qr-hardware-popover/qr-hardware-sign-request/player.stories.js",
   "ui/components/app/qr-hardware-popover/qr-hardware-sign-request/qr-hardware-sign-request.component.js",
   "ui/components/app/qr-hardware-popover/qr-hardware-sign-request/reader.js",
-  "ui/components/app/qr-hardware-popover/qr-hardware-wallet-importer/index.js",
-  "ui/components/app/qr-hardware-popover/qr-hardware-wallet-importer/qr-hardware-wallet-importer.component.js",
   "ui/components/app/recovery-phrase-reminder/index.js",
   "ui/components/app/recovery-phrase-reminder/recovery-phrase-reminder.js",
   "ui/components/app/recovery-phrase-reminder/recovery-phrase-reminder.stories.js",

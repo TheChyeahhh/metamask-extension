@@ -39,7 +39,7 @@ const QRHardwareSignRequest = ({
 
   const handleSuccess = useCallback(
     async (response: SerializedUR) => {
-      await dispatch(completeQrCodeScan(response));
+      return dispatch(completeQrCodeScan(response));
     },
     [dispatch],
   );

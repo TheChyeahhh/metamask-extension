@@ -1,5 +1,6 @@
 import React from 'react';
 import { screen, waitFor } from '@testing-library/react';
+import type { UR } from '@ngraveio/bc-ur';
 import { ETHSignature } from '@keystonehq/bc-ur-registry-eth';
 import * as uuid from 'uuid';
 import { renderWithProvider } from '../../../../../../test/lib/render-helpers-navigate';
@@ -8,7 +9,7 @@ import type { BaseReaderProps } from '../../base-reader.types';
 import type { ReaderProps } from './reader.types';
 import Reader from './reader';
 
-let mockUr: ReturnType<typeof buildMockUr> | undefined;
+let mockUr: UR | undefined;
 let mockLastReaderError: Error | undefined;
 
 jest.mock('../../base-reader', () => {
@@ -24,6 +25,9 @@ jest.mock('../../base-reader', () => {
       <button
         data-testid="base-reader-success"
         onClick={async () => {
+          if (!mockUr) {
+            return;
+          }
           try {
             await mockProps.handleSuccess(mockUr);
           } catch (err) {
@@ -60,9 +64,9 @@ const mockStringify = jest.mocked(uuid.stringify);
  * @param type
  * @param cborHex
  */
-function buildMockUr(type = 'eth-signature', cborHex = 'aabbcc') {
+function buildMockUr(type = 'eth-signature', cborHex = 'aabbcc'): UR {
   const cborBuffer = Buffer.from(cborHex, 'hex');
-  return { type, cbor: cborBuffer };
+  return { type, cbor: cborBuffer } as unknown as UR;
 }
 
 describe('Reader', () => {
