@@ -49,10 +49,10 @@ const renderSummaryByType = (variant, title, size) => {
 
 const Disclosure = ({
   children,
-  isScrollToBottomOnOpen,
-  title,
-  size,
-  variant,
+  isScrollToBottomOnOpen = false,
+  title = null,
+  size = 'normal',
+  variant = DisclosureVariant.Default,
 }) => {
   const disclosureFooterEl = useRef(null);
   const [open, setOpen] = useState(false);
@@ -95,13 +95,6 @@ Disclosure.propTypes = {
   size: PropTypes.string,
   title: PropTypes.string,
   variant: PropTypes.string,
-};
-
-Disclosure.defaultProps = {
-  isScrollToBottomOnOpen: false,
-  size: 'normal',
-  title: null,
-  variant: DisclosureVariant.Default,
 };
 
 export default Disclosure;

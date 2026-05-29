@@ -77,7 +77,10 @@ export function createMemoryRouterWrapper(options = {}) {
     );
 
     const container = (
-      <RouterProvider router={router} future={{ v7_relativeSplatPath: true }} />
+      <RouterProvider
+        router={router}
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      />
     );
 
     return store ? <Provider store={store}>{container}</Provider> : container;

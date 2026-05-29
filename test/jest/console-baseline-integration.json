@@ -4,7 +4,6 @@
       "Reselect: Identity function warnings": 3,
       "Reselect: Input stability warnings": 1,
       "error: Error: AggregateError": 1,
-      "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
       "warn: ⚠️ React Router Future Flag": 1
@@ -13,7 +12,6 @@
       "Reselect: Identity function warnings": 3,
       "Reselect: Input stability warnings": 1,
       "error: Error: AggregateError": 1,
-      "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
       "warn: ⚠️ React Router Future Flag": 1
@@ -22,7 +20,6 @@
       "Reselect: Identity function warnings": 3,
       "Reselect: Input stability warnings": 1,
       "error: Error: AggregateError": 1,
-      "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
       "warn: ⚠️ React Router Future Flag": 1
@@ -31,7 +28,6 @@
       "Reselect: Identity function warnings": 3,
       "Reselect: Input stability warnings": 1,
       "error: Error: AggregateError": 1,
-      "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
       "warn: ⚠️ React Router Future Flag": 1
@@ -42,7 +38,6 @@
       "Reselect: Input stability warnings": 1,
       "error: Error: AggregateError": 1,
       "error: Warning: Disclosure: Support for defaultProps": 1,
-      "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
       "warn: ⚠️ React Router Future Flag": 1
@@ -51,7 +46,6 @@
       "Reselect: Identity function warnings": 3,
       "Reselect: Input stability warnings": 1,
       "error: Error: AggregateError": 1,
-      "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
       "warn: ⚠️ React Router Future Flag": 1
@@ -60,7 +54,6 @@
       "Reselect: Identity function warnings": 3,
       "Reselect: Input stability warnings": 1,
       "error: Error: AggregateError": 1,
-      "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
       "error: Warning: Preloader: Support for defaultProps": 1,
@@ -70,7 +63,6 @@
       "Reselect: Identity function warnings": 3,
       "Reselect: Input stability warnings": 1,
       "error: Error: AggregateError": 1,
-      "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
       "error: Warning: Preloader: Support for defaultProps": 1,
@@ -81,7 +73,6 @@
       "Reselect: Input stability warnings": 1,
       "error: Error: AggregateError": 1,
       "error: Warning: Disclosure: Support for defaultProps": 1,
-      "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
       "error: Warning: Preloader: Support for defaultProps": 1,
@@ -91,7 +82,6 @@
       "Reselect: Identity function warnings": 3,
       "Reselect: Input stability warnings": 1,
       "error: Error: AggregateError": 1,
-      "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
       "warn: ⚠️ React Router Future Flag": 1
@@ -100,7 +90,6 @@
       "Reselect: Identity function warnings": 3,
       "Reselect: Input stability warnings": 1,
       "error: Error: AggregateError": 1,
-      "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
       "error: Warning: Preloader: Support for defaultProps": 1,
@@ -110,7 +99,6 @@
       "Reselect: Identity function warnings": 3,
       "Reselect: Input stability warnings": 1,
       "error: Error: AggregateError": 1,
-      "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
       "error: Warning: Preloader: Support for defaultProps": 1,
@@ -120,7 +108,6 @@
       "Reselect: Identity function warnings": 3,
       "Reselect: Input stability warnings": 1,
       "error: Error: AggregateError": 1,
-      "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
       "error: Warning: Preloader: Support for defaultProps": 1,
@@ -130,7 +117,6 @@
       "Reselect: Identity function warnings": 3,
       "Reselect: Input stability warnings": 1,
       "error: Error: AggregateError": 1,
-      "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
       "warn: ⚠️ React Router Future Flag": 1
@@ -139,7 +125,6 @@
       "Reselect: Identity function warnings": 3,
       "Reselect: Input stability warnings": 1,
       "error: Error: AggregateError": 1,
-      "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
       "error: Warning: Preloader: Support for defaultProps": 1,
@@ -150,10 +135,8 @@
       "Reselect: Input stability warnings": 5,
       "error: Error: AggregateError": 4,
       "error: Warning: Home uses the legacy": 1,
-      "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
-      "error: Warning: The current testing environment": 3,
       "warn: ⚠️ React Router Future Flag": 1
     },
     "test/integration/nfts/nfts.test.tsx": {
@@ -161,24 +144,40 @@
       "Reselect: Input stability warnings": 5,
       "error: Error: AggregateError": 3,
       "error: Warning: Home uses the legacy": 1,
-      "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
+      "warn: ⚠️ React Router Future Flag": 1
+    },
+    "test/integration/notifications&auth/notifications-activation.test.tsx": {
+      "Reselect: Input stability warnings": 6,
+      "error: Warning: Home uses the legacy": 1,
+      "error: Warning: LegacyI18nProvider uses the legacy": 1,
+      "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
+      "error: Warning: The current testing environment": 3,
       "warn: ⚠️ React Router Future Flag": 1
     },
     "test/integration/notifications&auth/notifications-list.test.tsx": {
       "Reselect: Input stability warnings": 5,
       "error: Warning: Home uses the legacy": 1,
-      "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
+      "warn: ⚠️ React Router Future Flag": 1
+    },
+    "test/integration/notifications&auth/notifications-toggle.test.tsx": {
+      "React: Missing key props in lists": 1,
+      "React: componentWill* lifecycle deprecations": 1,
+      "Reselect: Input stability warnings": 8,
+      "error: Warning: Home uses the legacy": 1,
+      "error: Warning: LegacyI18nProvider uses the legacy": 1,
+      "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
+      "error: Warning: Preloader: Support for defaultProps": 1,
+      "error: Warning: The current testing environment": 2,
       "warn: ⚠️ React Router Future Flag": 1
     },
     "test/integration/onboarding/import-wallet.test.tsx": {
       "Reselect: Identity function warnings": 1,
       "Reselect: Input stability warnings": 5,
       "error: Warning: Home uses the legacy": 1,
-      "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
       "warn: ⚠️ React Router Future Flag": 1
@@ -187,7 +186,6 @@
       "Reselect: Identity function warnings": 1,
       "Reselect: Input stability warnings": 5,
       "error: Warning: Home uses the legacy": 1,
-      "error: Warning: I18nProvider: Support for defaultProps": 1,
       "error: Warning: LegacyI18nProvider uses the legacy": 1,
       "error: Warning: LegacyMetaMetricsProvider uses the legacy": 1,
       "warn: ⚠️ React Router Future Flag": 1

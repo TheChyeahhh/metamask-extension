@@ -48,6 +48,3 @@ TokenBalance.propTypes = {
   showFiat: PropTypes.bool,
 };
 
-TokenBalance.defaultProps = {
-  className: undefined,
-};

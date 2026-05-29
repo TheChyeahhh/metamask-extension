@@ -10,7 +10,7 @@ import { getMessage } from '../helpers/utils/i18n-helper';
 
 export const I18nContext = createContext((key) => `[${key}]`);
 
-export const I18nProvider = (props) => {
+export const I18nProvider = ({ children } = {}) => {
   const currentLocale = useSelector(getCurrentLocale);
   const current = useSelector(getCurrentLocaleMessages);
   const en = useSelector(getEnLocaleMessages);
@@ -22,16 +22,12 @@ export const I18nProvider = (props) => {
   }, [currentLocale, current, en]);
 
   return (
-    <I18nContext.Provider value={t}>{props.children}</I18nContext.Provider>
+    <I18nContext.Provider value={t}>{children}</I18nContext.Provider>
   );
 };
 
 I18nProvider.propTypes = {
   children: PropTypes.node,
-};
-
-I18nProvider.defaultProps = {
-  children: undefined,
 };
 
 export class LegacyI18nProvider extends Component {
