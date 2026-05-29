@@ -105,8 +105,13 @@ $MM type unused 1 --selector '[data-testid="amount-input-field"] input' || true
 $MM click unused --testid order-type-limit || true
 $MM navigate "${BASE}#/perps/activity"
 
-# --- Live setup (mutating; requires ~$10+ Perps balance) ---
-# order_market BTC/ETH/SP500 helpers omitted when balance < minimum — see report.
+# --- Live setup (mutating) ---
+# Even ~$1.64 "Available to trade" can work: set MAX leverage on each market BEFORE $10 size.
+#   BTC 40x, ETH 25x, SP500 50x — then submit. Only Block if insufficient after max lev.
+# Example:
+#   mm type unused 40 --selector '[data-testid="leverage-input"] input'
+#   mm type unused 10 --selector '[data-testid="amount-input-field"] input'
+#   mm click unused --testid submit-order-button
 
 # --- Mandatory teardown (same session) ---
 for sym in BTC "xyz:SP500"; do

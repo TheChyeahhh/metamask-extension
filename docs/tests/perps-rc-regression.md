@@ -1,5 +1,13 @@
 # Perps RC Regression Checklist
 
+## Automation prerequisite (live wallet)
+
+Perps **available balance** may show ~$1.50–$2.00 USDC. Headless live setup still
+runs at **$10 notional** with **maximum market leverage** (BTC 40x, ETH 25x,
+SP500 50x) so margin stays sub-dollar. Do not skip mutating Critical cases based
+on balance dropdown alone — attempt submit with max leverage first. See
+`docs/tests/headless-mm-session-prompt-perps-rc.md`.
+
 ## Critical (headless automation scope)
 
 - [ ] [Critical] PERPS-RC-003 — Lock and unlock wallet from Perps home tab

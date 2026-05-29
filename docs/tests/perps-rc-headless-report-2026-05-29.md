@@ -32,7 +32,10 @@
 | Not run | 0 |
 | Teardown | Pass (no live positions opened) |
 
-Live wallet balance on Perps was ~**1.64 USDC** available to trade, below the **$10** minimum order size. Mutating position-management and live-setup trades were therefore blocked without opening exposure.
+Live wallet showed ~**1.64 USDC** available to trade. The run blocked mutating cases
+treating that as insufficient margin. **Next runs:** use max leverage before submit
+(~$10 notional at 40x/25x/50x needs sub-dollar margin). See
+`docs/tests/headless-mm-session-prompt-perps-rc.md`.
 
 ## Test Results
 
