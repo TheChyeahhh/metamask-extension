@@ -8,6 +8,10 @@ SP500 50x) so margin stays sub-dollar. Do not skip mutating Critical cases based
 on balance dropdown alone — attempt submit with max leverage first. See
 `docs/tests/headless-mm-session-prompt-perps-rc.md`.
 
+**Screenshots:** name files with test code + step, e.g.
+`perps-rc-13.34.0-2026-05-29-PERPS-RC-061-btc-long-pre-submit-<timestamp>.png`
+(not generic `screenshot-*.png`).
+
 ## Critical (headless automation scope)
 
 - [ ] [Critical] PERPS-RC-003 — Lock and unlock wallet from Perps home tab

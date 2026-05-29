@@ -8,3 +8,6 @@
 | [perps-rc-headless-report-YYYY-MM-DD.md](./perps-rc-headless-report-2026-05-29.md) | Outcome report (example date) |
 
 **Low balance:** ~$1.64 available USDC is OK when max leverage is set before $10 submits.
+
+**Screenshots:** use `PERPS-RC-###-<step-slug>-<timestamp>.png` — see prompt section
+*Screenshots — meaningful filenames*.

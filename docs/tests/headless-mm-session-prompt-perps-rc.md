@@ -31,6 +31,46 @@ Parameters:
 - SCREENSHOT_PREFIX: perps-rc-<version>-<YYYY-MM-DD>
 - RUN_ID: perps-rc-<version>-<YYYY-MM-DD>
 - LIVE_SETUP_PROFILE: minimal-live-trades
+- SCREENSHOT_DIR: docs/tests/perps-rc-evidence-<YYYY-MM-DD> (commit evidence to the branch)
+
+## Screenshots — meaningful filenames (required)
+
+Never rely on default `screenshot-<epoch>.png` names. Every `mm screenshot` must
+pass **`--name`** (CLI flag; there is no `--path`) with a **human-readable** basename
+that includes the **test code** and a short **step slug** from the checklist title.
+
+**`--name` pattern (no `.png`; mm appends `-<epoch>.png`):**
+
+```text
+${SCREENSHOT_PREFIX}-<TEST_CODE>-<step-slug>
+```
+
+Examples of full filenames after mm saves:
+
+```text
+perps-rc-13.34.0-2026-05-29-PERPS-RC-061-btc-long-pre-submit-1780067405773.png
+```
+
+- `<TEST_CODE>` — exact checklist id, e.g. `PERPS-RC-061` (always uppercase).
+- `<step-slug>` — kebab-case step tied to the case title, e.g.
+  `balance-dropdown`, `btc-long-pre-submit`, `eth-limit-submitted`,
+  `sp500-short-insufficient`, `modify-add-exposure`, `reduce-position-modal`,
+  `auto-close-tp-sl`, `withdraw-page`, `activity-page`, `lock-wallet`, `teardown-btc`.
+- Prefer slugs that read like the test name, not `step1` / `done`.
+
+**Examples:**
+
+```bash
+mm screenshot --name "perps-rc-13.34.0-2026-05-29-PERPS-RC-061-btc-long-pre-submit"
+mm screenshot --name "perps-rc-13.34.0-2026-05-29-PERPS-RC-108-withdraw-page"
+```
+
+Screenshots land in `test-artifacts/screenshots/` during the run. After the run,
+**copy** (or move) them into `SCREENSHOT_DIR` with the same basenames and **commit**
+on the automation branch.
+
+Take at least one screenshot per Critical case executed (Pass/Fail/Partial/Blocked).
+Reference the basename (without epoch suffix) in the report Evidence column.
 
 ## Low Perps balance (~$1.50–$2.00) — still run live trades
 
@@ -108,7 +148,11 @@ Autonomy expectations:
     ```
     (Not `mm clipboard write --text`.)
 
-Deliverables: SCRIPT_PATH, REPORT_PATH, Slack thread summary when BUILD_SLACK_URL set.
+14. Screenshots: follow **Screenshots — meaningful filenames** above; store under
+    `SCREENSHOT_DIR` and commit to the automation branch.
+
+Deliverables: SCRIPT_PATH, REPORT_PATH, named screenshots in SCREENSHOT_DIR, Slack
+thread summary (include branch link) when BUILD_SLACK_URL set.
 ````
 
 ## Related artifacts
