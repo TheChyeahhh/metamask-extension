@@ -65,7 +65,7 @@ import type {
 } from '../../../shared/constants/metametrics';
 import { SECOND } from '../../../shared/constants/time';
 import { isManifestV3 } from '../../../shared/lib/mv3.utils';
-import { METAMETRICS_FINALIZE_EVENT_FRAGMENT_ALARM } from '../../../shared/constants/alarms';
+import { Alarm } from '../../../shared/constants/alarms';
 import {
   checkAlarmExists,
   generateRandomId,
@@ -553,12 +553,12 @@ export class MetaMetricsController extends BaseController<
       this.#extension.alarms.getAll().then((alarms) => {
         const hasAlarm = checkAlarmExists(
           alarms,
-          METAMETRICS_FINALIZE_EVENT_FRAGMENT_ALARM,
+          Alarm.MetaMetricsFinalizeEventFragment,
         );
 
         if (!hasAlarm) {
           this.#extension.alarms.create(
-            METAMETRICS_FINALIZE_EVENT_FRAGMENT_ALARM,
+            Alarm.MetaMetricsFinalizeEventFragment,
             {
               delayInMinutes: 1,
               periodInMinutes: 1,
@@ -567,7 +567,7 @@ export class MetaMetricsController extends BaseController<
         }
       });
       this.#extension.alarms.onAlarm.addListener((alarmInfo) => {
-        if (alarmInfo.name === METAMETRICS_FINALIZE_EVENT_FRAGMENT_ALARM) {
+        if (alarmInfo.name === Alarm.MetaMetricsFinalizeEventFragment) {
           this.finalizeAbandonedFragments();
         }
       });
