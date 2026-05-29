@@ -3,7 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { providerErrors, serializeError } from '@metamask/rpc-errors';
 import { QrScanRequestType } from '@metamask/eth-qr-keyring';
 import { getActiveQrCodeScanRequest } from '../../../selectors';
-import Popover from '../../ui/popover';
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+} from '../../component-library';
 import {
   cancelTx,
   rejectPendingApproval,
@@ -84,30 +89,36 @@ const QRHardwarePopover = () => {
     return null;
   }
 
-  return activeScanRequest ? (
-    <Popover
-      title={title}
-      onClose={
-        activeScanRequest.type === QrScanRequestType.PAIR
-          ? walletImporterCancel
-          : signRequestCancel
-      }
-    >
-      {activeScanRequest.type === QrScanRequestType.PAIR && (
-        <QRHardwareWalletImporter
-          handleCancel={walletImporterCancel}
-          setErrorTitle={setErrorTitle}
-        />
-      )}
-      {activeScanRequest.type === QrScanRequestType.SIGN && (
-        <QRHardwareSignRequest
-          setErrorTitle={setErrorTitle}
-          handleCancel={signRequestCancel}
-          request={activeScanRequest.request}
-        />
-      )}
-    </Popover>
-  ) : null;
+  if (!activeScanRequest) {
+    return null;
+  }
+
+  const onClose =
+    activeScanRequest.type === QrScanRequestType.PAIR
+      ? walletImporterCancel
+      : signRequestCancel;
+
+  return (
+    <Modal isOpen onClose={onClose}>
+      <ModalOverlay />
+      <ModalContent>
+        <ModalHeader onClose={onClose}>{title || undefined}</ModalHeader>
+        {activeScanRequest.type === QrScanRequestType.PAIR && (
+          <QRHardwareWalletImporter
+            handleCancel={walletImporterCancel}
+            setErrorTitle={setErrorTitle}
+          />
+        )}
+        {activeScanRequest.type === QrScanRequestType.SIGN && (
+          <QRHardwareSignRequest
+            setErrorTitle={setErrorTitle}
+            handleCancel={signRequestCancel}
+            request={activeScanRequest.request}
+          />
+        )}
+      </ModalContent>
+    </Modal>
+  );
 };
 
 export default QRHardwarePopover;
